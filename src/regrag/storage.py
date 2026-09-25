@@ -64,7 +64,11 @@ class Lake:
     def append_rows(self, table: str, rows: list[dict], schema: pa.Schema | None = None,
                     part_name: str | None = None) -> str | None:
         if not rows:
-            return None
+            # A table that has never had rows still gets one zero-row part carrying its schema, so
+            # readers (dbt sources, DuckDB globs) see an empty table instead of "no files found".
+            if schema is None or self.glob(f"{table}/**/*.parquet"):
+                return None
+            part_name = "_schema"
         tbl = pa.Table.from_pylist(rows, schema=schema)
         rel = posixpath.join(table, f"{part_name or uuid.uuid4().hex}.parquet")
         buf = io.BytesIO()

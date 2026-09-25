@@ -105,3 +105,21 @@ def test_rechunk_backfills_new_chunk_version(cfg, fake_source, tmp_path):
     assert rechunk(cfg, str(p))["documents"] == 0            # idempotent backfill
     old = Lake(cfg["lake_root"]).read_rows(f"silver/chunks/chunk_config={first['chunk_config_version']}")
     assert old, "previous version is left untouched"
+
+
+def test_dbt_passes_when_nothing_was_quarantined(cfg, monkeypatch, decision_pdf, tmp_path):
+    """A fresh lake with no quarantined files must still give dbt a (zero-row) quarantine table."""
+    from datetime import UTC, datetime
+
+    from conftest import FakeSource
+
+    from regrag.ops.dbt import run_dbt
+    src = FakeSource({"2001": (decision_pdf, "Decision and Order_Northwind Hydro_EB-2026-0015", "pdf")})
+    monkeypatch.setattr("regrag.bronze.ingest.get_source", lambda name, cfg: src)
+    today = datetime.now(UTC).date()
+    ingest(cfg, "oeb", since=today, until=today)
+    assert run_silver(cfg)["quarantined"] == 0
+    assert Lake(cfg["lake_root"]).glob("silver/quarantine/*.parquet")        # zero-row schema part
+    monkeypatch.setenv("REGRAG_LAKE_ROOT", cfg["lake_root"])
+    monkeypatch.setenv("REGRAG_DBT_DUCKDB", str(tmp_path / "dbt.duckdb"))
+    assert run_dbt(cfg) == 0

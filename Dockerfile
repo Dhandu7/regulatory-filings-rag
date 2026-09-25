@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1
 # regrag: pipeline CLI + QA API/console in one image.
 #
 #   docker compose up -d                     # Postgres+pgvector and the API/console on :8000
@@ -26,14 +25,9 @@ RUN mkdir -p src/regrag && touch src/regrag/__init__.py \
  && pip uninstall -y regrag
 
 # Bake the models the pipeline and API load at runtime (names match configs/pipeline.yaml).
-RUN python - <<'EOF'
-from fastembed import TextEmbedding
-from fastembed.rerank.cross_encoder import TextCrossEncoder
-import tiktoken
-TextEmbedding("BAAI/bge-small-en-v1.5")
-TextCrossEncoder("Xenova/ms-marco-MiniLM-L-6-v2")
-tiktoken.get_encoding("cl100k_base")
-EOF
+# A script rather than a RUN heredoc, so the classic (non-BuildKit) builder works too.
+COPY scripts/prefetch_models.py /tmp/prefetch_models.py
+RUN python /tmp/prefetch_models.py && rm /tmp/prefetch_models.py
 
 COPY . .
 # Editable install: configs/, dbt/ and eval/ are resolved relative to /app.
