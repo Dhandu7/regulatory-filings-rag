@@ -1,0 +1,2128 @@
+{
+  "summary": {
+    "n_questions": 30,
+    "k": 6,
+    "hybrid": false,
+    "index_version": "v1-d4fd9d711f72__bge_small_en_v1_5",
+    "doc_hit@1": 0.7333333333333333,
+    "doc_hit@3": 0.9333333333333333,
+    "doc_hit@6": 0.9666666666666667,
+    "answer_hit@6": 0.8333333333333334,
+    "mrr": 0.8305555555555556,
+    "retrieval_ms_p50": 17.908832989633083,
+    "retrieval_ms_p95": 27.69758299109526,
+    "total_ms_p50": 3172.108250000747,
+    "total_ms_p95": 8006.762165983673,
+    "retrieval_ms_mean": 18.207320764971275,
+    "answer_acc": 0.7333333333333333,
+    "cited_expected_rate": 0.9666666666666667,
+    "prompt_cache": {
+      "read_tokens": 41250,
+      "write_tokens": 0,
+      "uncached_input_tokens": 97880,
+      "hit_ratio": 0.2964853015165672
+    }
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "question": "Under which section of the OEB Act did Vitol Inc. apply to renew its electricity wholesaler licence?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 11.971583997365087,
+      "total_ms": 2580.9226669953205,
+      "retrieved": [
+        [
+          "934360",
+          "EB-2026-0015",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955711",
+          "EB-2026-0184",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            27,
+            28
+          ]
+        ],
+        [
+          "956878",
+          "EB-2026-0215",
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "answer": "Vitol Inc. filed its application under section 60 of the *Ontario Energy Board Act, 1998*, on November 28, 2025, seeking renewal of its electricity wholesaler licence [1]. The OEB granted the application by delegated authority (Tracy Garner, Manager, Transmission Policy & Compliance) on February 26, 2026, without a hearing pursuant to section 6(4) of the OEB Act, finding it in the public interest after assessing the applicant's technical capability and financial viability [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3636,
+        "output_tokens": 179,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q02",
+      "question": "For how long a term did the OEB decide to issue Chosen Energy Limited's electricity retailer licence after its appeal?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 13.213291997089982,
+      "total_ms": 3396.679375000531,
+      "retrieved": [
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            14,
+            14
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            9,
+            10
+          ]
+        ]
+      ],
+      "answer": "On appeal (EB-2026-0162), the OEB varied the Delegated Authority's original order and decided to issue Chosen Energy Limited a retailer licence containing the OEB's standard conditions with a term of **two years from the date of licence issuance** [2].\n\nThe OEB noted that while a two-year initial term is shorter than the typical five-year licence term, it is not unprecedented, as the OEB has on a number of occasions issued electricity retailer licences for terms of less than five years to new market entrants, including a two-year term set in a recent appeal from a Delegated Authority decision [2]. This outcome differs from OEB staff's position, which opposed a shorter-term licence and argued there is no statutory or regulatory basis requiring consideration of a reduced term where an applicant has not met the licensing requirements [4].",
+      "answer_acc": false,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3580,
+        "output_tokens": 281,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q03",
+      "question": "How much was the School Energy Coalition awarded in costs in the GrandBridge Energy non-wires solutions proceeding?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 27.69758299109526,
+      "total_ms": 2487.7013329823967,
+      "retrieved": [
+        [
+          "954688",
+          "EB-2025-0265",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954688",
+          "EB-2025-0265",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "956426",
+          null,
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            10,
+            11
+          ]
+        ]
+      ],
+      "answer": "The School Energy Coalition was awarded **$5,341.29** in the GrandBridge Energy Non-Wires Solutions proceeding (EB-2025-0265), payable immediately by GrandBridge pursuant to section 30 of the *Ontario Energy Board Act, 1998* [2]. The OEB found the cost claims complied with its Practice Direction on Cost Awards, were reasonable, and shall be reimbursed by GrandBridge Energy; no objections were raised by the applicant [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2714,
+        "output_tokens": 191,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q04",
+      "question": "How long is the transmission line Hydro One wants to build in the City of Ottawa to supply the Orl\u00e9ans community?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 22.52512500854209,
+      "total_ms": 2717.2806249873247,
+      "retrieved": [
+        [
+          "954432",
+          "EB-2026-0018",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955586",
+          "EB-2026-0018",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            13,
+            14
+          ]
+        ],
+        [
+          "954038",
+          "EB-2026-0066",
+          [
+            117,
+            117
+          ]
+        ]
+      ],
+      "answer": "Approximately 11 kilometres. Hydro One applied to the OEB on May 29, 2026, under section 92 of the OEB Act for leave to construct approximately 11 kilometres of electricity transmission line and associated facilities in the City of Ottawa, which would increase supply capacity to the Orl\u00e9ans community of eastern Ottawa (EB-2026-0018) [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3873,
+        "output_tokens": 141,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q05",
+      "question": "What information did the OEB agree to treat as confidential in Hydro One's response to OEB staff interrogatory 6(d) for the Ottawa transmission line?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 23.55020900722593,
+      "total_ms": 8647.794541000621,
+      "retrieved": [
+        [
+          "939629",
+          "EB-2025-0290",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "955586",
+          "EB-2026-0018",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955559",
+          "EB-2026-0128",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "939629",
+          "EB-2025-0290",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955551",
+          "EB-2026-0154",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955085",
+          "EB-2026-0155",
+          [
+            3,
+            3
+          ]
+        ]
+      ],
+      "answer": "The retrieved filings do not state the OEB's finding on that request; source [2] cuts off in the middle of describing the request. What it does show is that on August 26, 2026, in EB-2026-0018 (Hydro One's section 92 application for approximately 11 kilometres of transmission line in the City of Ottawa to increase supply capacity to the Orl\u00e9ans community), Hydro One requested confidential treatment of certain information in its response to OEB staff interrogatory 6(d), described as a Net Present Value (NPV) sensitivity analysis of line loss calculations that Hydro One characterized as a proprietary financial model, citing Rule 10.01 of the OEB Rules of Practice and Procedure and Appendix A(a), A(b) and B(3) of the Practice Direction on Confidential Filings [2].\n\nFor comparison, in other proceedings the OEB has approved confidential treatment of Hydro One's line loss calculations \u2014 for example in EB-2026-0154 (OEB staff interrogatories 4(b) and (c)) [5] and EB-2026-0128 (OEB staff interrogatory 3(f)) [3], and in EB-2025-0290 for OEB staff Interrogatory 8 \u2013 Attachment 1 and Interrogatory 11(f), (g), (i), (j) and (k) [1][4] \u2014 but those are separate dockets and cannot be taken as the outcome in EB-2026-0018.",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 4123,
+        "output_tokens": 560,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q06",
+      "question": "Under which section of the OEB Act did the OEB start its review of the natural gas Model Franchise Agreement?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 21.593374985968694,
+      "total_ms": 4322.209500009194,
+      "retrieved": [
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            17,
+            18
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            6,
+            7
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            15,
+            15
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            10,
+            11
+          ]
+        ],
+        [
+          "956389",
+          "EB-2025-0315",
+          [
+            4,
+            5
+          ]
+        ]
+      ],
+      "answer": "The retrieved filings do not state under which section of the OEB Act the OEB initiated its review of the Model Franchise Agreement. The closest material is the Decision on the Issues List in EB-2026-0009 (June 16, 2026), which addresses the scope of that review \u2014 including requests to add issues on paragraphs 2, 3, 5 and 17 of the Model Franchise Agreement, future review mechanisms, and infrastructure locates \u2014 but it does not cite the statutory authority for commencing the proceeding [1][2][4][5]. Related franchise applications by Enbridge Gas are made under the Municipal Franchises Act rather than the OEB Act [3][5].",
+      "answer_acc": false,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3711,
+        "output_tokens": 246,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q07",
+      "question": "How much funding did the OEB order reallocated to Limited Electrification Measures in Enbridge's Southern Lake Huron IRP pilot?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 12.14066700777039,
+      "total_ms": 4317.072875011945,
+      "retrieved": [
+        [
+          "936974",
+          "EB-2025-0333",
+          [
+            12,
+            12
+          ]
+        ],
+        [
+          "954724",
+          "EB-2026-0054",
+          [
+            15,
+            16
+          ]
+        ],
+        [
+          "956426",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954815",
+          "EB-2026-0157",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "955016",
+          "EB-2026-0152",
+          [
+            116,
+            116
+          ]
+        ],
+        [
+          "955016",
+          "EB-2026-0152",
+          [
+            99,
+            99
+          ]
+        ]
+      ],
+      "answer": "The retrieved filings do not state any amount of funding ordered reallocated to \"Limited Electrification Measures\" in Enbridge Gas's Southern Lake Huron IRP pilot.\n\nThe closest source is the OEB's Decision on Threshold Question and Procedural Order No. 2 (EB-2025-0333, March 24, 2026), which stays the OEB's March 27, 2025 Decision in EB-2022-0335 in relation to the identified Review Issues until the Review Motion is determined on its merits. Under that stay, the possibility of Enbridge Gas including incentives for advanced gas technologies remains open for the Southern Lake Huron pilot project, and Enbridge Gas \"is not required to re-allocate its proposed budgets for advanced gas technologies,\" though it also may not implement such incentives pending the determination of the Review Motion [1]. No dollar figure or reference to electrification measures appears in the sources.",
+      "answer_acc": false,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3687,
+        "output_tokens": 366,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q08",
+      "question": "Where is the generation facility owned by Stelco Inc. located?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": false,
+      "retrieval_ms": 15.502082998864353,
+      "total_ms": 2253.6512080114335,
+      "retrieved": [
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            41,
+            41
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            76,
+            77
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            329,
+            330
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            236,
+            236
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            42,
+            42
+          ]
+        ]
+      ],
+      "answer": "The retrieved filings do not state where any generation facility owned by Stelco Inc. is located; Stelco is not mentioned in these sources. The closest related material is Enova's discussion of renewable energy generation, which notes sufficient generation hosting capacity across its points of supply, transformer stations and 13.8 kV and 27.6 kV feeder systems, with no REG investments proposed in the DSP [2].",
+      "answer_acc": false,
+      "cited_expected": false,
+      "usage": {
+        "input_tokens": 2594,
+        "output_tokens": 135,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q09",
+      "question": "What type of licence was Passer Digital Inc. granted?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.603624990442768,
+      "total_ms": 3042.342667002231,
+      "retrieved": [
+        [
+          "955712",
+          null,
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955711",
+          "EB-2026-0184",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954056",
+          null,
+          [
+            249,
+            249
+          ]
+        ]
+      ],
+      "answer": "Passer Digital Inc. was granted an **agent-only electricity retailer licence** (Licence ER-2026-0184) under section 60 of the OEB Act, by delegated authority in EB-2026-0184 [3][2]. The licence permits the Applicant to act as an agent or broker to use the electronic business transactions system to gather consumption data on behalf of low- and large-volume consumers; if it wishes to engage in retailer activities beyond that scope, it must file a further application and obtain OEB approval [3].\n\nThe licence takes effect September 15, 2026 and expires September 14, 2031, subject to extension by the Board [4][2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2543,
+        "output_tokens": 257,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q10",
+      "question": "How long is the 230kV line in Hydro One's Durham Kawartha Power Line Project?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.908832989633083,
+      "total_ms": 3172.108250000747,
+      "retrieved": [
+        [
+          "955058",
+          "EB-2026-0155",
+          [
+            9,
+            9
+          ]
+        ],
+        [
+          "956043",
+          "EB-2026-0155",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956180",
+          "EB-2026-0155",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "answer": "Approximately 55 kilometres. Hydro One applied on June 12, 2026 under sections 92 and 97 of the OEB Act for leave to construct approximately 55 km of new 230 kV double-circuit transmission line between Dobbin Transformer Station and Clarington Transformer Station, together with related station modifications [2]. The interrogatory materials similarly describe the Project as \"a new approximately 55 km, 230 kV double-circuit transmission line between Dobbin TS and Clarington TS, including associated station modifications\" [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3557,
+        "output_tokens": 191,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q11",
+      "question": "What is the monthly total bill impact for a typical Lakeland Power residential customer from its 2026 final rate order?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 21.51824999600649,
+      "total_ms": 3250.5054590001237,
+      "retrieved": [
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            6,
+            7
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            9,
+            10
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            16,
+            16
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            12,
+            12
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            2,
+            3
+          ]
+        ]
+      ],
+      "answer": "The OEB estimates that, for a typical Lakeland Power residential customer consuming 750 kWh per month, the total bill will increase by **$11.16 (6.86%) per month**, before taxes and the Ontario Electricity Rebate [6]. This estimate includes the impact of the Partial Decision and Rate Order issued March 31, 2026, as well as the Z-factor related findings from the July 30, 2026 Decision and Order (ice storm of March 29\u201330, 2025 and the June 13, 2024 lightning storm) [6]. The resulting Tariff of Rates and Charges in Schedule A is effective September 1, 2026, and applies to electricity consumed or estimated to have been consumed on and after that date [5].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3175,
+        "output_tokens": 298,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q12",
+      "question": "How much did the OEB approve for recovery for Lakeland Power's ice storm Z-factor event?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 19.020874984562397,
+      "total_ms": 2392.790874990169,
+      "retrieved": [
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            9,
+            10
+          ]
+        ]
+      ],
+      "answer": "The OEB approved recovery of a total of **$1,086,130, including carrying charges**, for Lakeland Power's ice storm Z-factor event, as set out in its July 30, 2026 Decision and Order [1]. The ice storm occurred on March 29 and 30, 2025 [2]. For comparison, the OEB approved $1,296,353 including carrying charges for the lightning storm Z-factor event (June 13, 2024) [1][2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3069,
+        "output_tokens": 170,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q13",
+      "question": "What does the generic Non-Wires Solutions Variance Account record?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 11.942540993914008,
+      "total_ms": 5395.025958016049,
+      "retrieved": [
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            11,
+            12
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "answer": "The generic Non-Wires Solutions Variance Account (NWSVA) records the variance between the revenue requirements of actual eligible non-wires solution costs and the amounts recovered through OEB-approved rates for the NWS project (for example, through an NWS rate rider or amounts included in base rates) [1][3]. Eligible actual costs may include operations, maintenance & administration and capital-related costs, plus any incentive mechanism approved by the OEB for using third-party non-wires solutions \u2014 with incentive amounts recorded only if the OEB has approved the incentive mechanism for that project [1][3].\n\nKey conditions set out by the OEB:\n- Amounts recorded are net of any third-party funding or recoveries (e.g., IESO funding, government grants, or market revenues) [3][5].\n- Amounts are limited to NWS projects in OEB-approved rates; costs pertaining to IESO Stream 2 local electricity demand-side management (eDSM) programs are excluded and must instead go to the eDSM Variance Account (eDSMVA) [1][5].\n- Interest is recorded using the OEB's prescribed interest rates, calculated as simple interest on the opening monthly balance until the balance is fully disposed [5].\n\nThe account is established as a Group 2 account effective January 1, 2027: Account 1508 \u2013 Other Regulatory Assets, Sub-Account NWSVA \u2013 Project Costs, and a companion Carrying Charges sub-account, with third-party funding credited to Account 4245 [3][6].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3316,
+        "output_tokens": 510,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q14",
+      "question": "Until what date did Enbridge Gas ask to extend its approved 2026 DSM activities?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.278833023738116,
+      "total_ms": 4611.089540994726,
+      "retrieved": [
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "956596",
+          "EB-2025-0295",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          "956578",
+          "EB-2025-0295",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "answer": "Enbridge Gas asked to extend approval of its 2026 DSM activities until the earlier of (i) the date of the OEB's Decision and Order on its 2027-2030 DSM Plan application, or (ii) March 31, 2027 [2][3]. The request was filed August 26, 2026 in EB-2025-0295; current approval runs to December 31, 2026 [3].\n\nEnbridge Gas also sought advance approval to recover prudently incurred costs of winding down any program, offering or activity not approved for continuation, where such costs are incurred within 120 days following issuance of that Decision [2][3].\n\nNote that OEB staff (not a decision) recommended a different end point \u2014 that the extension run until the final decision and order on 2027-2030 DSM activities takes effect, with no fixed sunset date, arguing Enbridge Gas had not justified why an extension beyond March 31, 2027 would require a standalone 2027 plan [1][4]. Energy Probe characterized the request as an extension of the 2023-2026 DSM Plan and submitted it should be approved only with conditions [6].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3729,
+        "output_tokens": 397,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q15",
+      "question": "By what date does the OEB aim to issue its decision on Enbridge Gas's DSM extension request?",
+      "first_relevant_rank": 4,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 21.337000012863427,
+      "total_ms": 5701.090042013675,
+      "retrieved": [
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "954385",
+          "EB-2025-0295",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            6,
+            6
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "answer": "The retrieved filings do not state a target date by which the OEB aims to issue its decision on Enbridge Gas's DSM extension request.\n\nThe closest information concerns dates within the request itself, not the OEB's own decision timeline: Enbridge Gas filed the request on August 26, 2026, seeking to extend its 2026 DSM activities \"until the earlier of the OEB's decision and order on the 2027-2030 DSM Plan or March 31, 2027\" [1]. OEB staff, in its September 15, 2026 submission, recommended instead that the extension run until the final decision and order on 2027-2030 DSM activities takes effect, with no fixed sunset date, noting that the OEB's adjudicative timetable should not be constrained by an operational date selected by Enbridge Gas [3][6]. The OEB's September 1, 2026 letter confirmed the extension request would be dealt with through the written process in Procedural Order No. 6, with all procedural dates unchanged, but the excerpt provided does not list those dates [4].",
+      "answer_acc": false,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3345,
+        "output_tokens": 406,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q16",
+      "question": "When does the extended abeyance of Enbridge Gas's Lanark and Balderson Community Expansion Project application end?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 19.294541998533532,
+      "total_ms": 3698.06345901452,
+      "retrieved": [
+        [
+          "956707",
+          "EB-2025-0306",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            9,
+            9
+          ]
+        ],
+        [
+          "955465",
+          "EB-2026-0223",
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          "954700",
+          "EB-2025-0270",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954813",
+          "EB-2025-0271",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955468",
+          "EB-2026-0223",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "answer": "The retrieved excerpt does not state the end date of the further extension. Source [1], the OEB's September 23, 2026 letter in EB-2025-0306, confirms that the OEB had previously placed the Lanark and Balderson Community Expansion Project application in abeyance for 45 calendar days from June 17, 2026 to August 3, 2026, and again from August 6, 2026 to September 21, 2026, and that the Ministry of Energy and Mines Letter of Opinion on Indigenous consultation was still pending as of September 21, 2026 [1]. The portion of the letter setting out the new abeyance end date is not included in the retrieved text.",
+      "answer_acc": false,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3345,
+        "output_tokens": 272,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q17",
+      "question": "What recommendations is the OEB's Regional Planning Reform Implementation initiative meant to implement?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 18.517874996177852,
+      "total_ms": 8006.762165983673,
+      "retrieved": [
+        [
+          "955991",
+          "EB-2026-0245",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            18,
+            19
+          ]
+        ],
+        [
+          "955991",
+          "EB-2026-0245",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            9,
+            9
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            26,
+            27
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            3,
+            4
+          ]
+        ]
+      ],
+      "answer": "The RPRI initiative (EB-2026-0245), launched by letter dated September 17, 2026, is intended to implement the recommendations set out in the OEB's March 2026 Report to the Ministry of Energy and Mines, *Review of Ontario's Regional and Bulk Electricity Planning Processes*, which responded to the Minister's June 2025 Integrated Energy Plan Directive [3]. The OEB submitted the Report on March 31, 2026, and its recommendations were informed by input from the Regional and Bulk Planning Process Advisory Group [1].\n\nImplementation will proceed through four workstreams:\n1. Streamline the regional planning process by amending OEB regulatory instruments [1].\n2. Strengthen process governance by developing guidance documents [1].\n3. Enhance the quality of forecasts entering the regional planning process [1].\n4. Improve consideration of distributed energy resources (DERs) in the regional planning process [1].\n\nThe underlying Report's regional planning actions include creating a forecast standard to drive utility forecast readiness, streamlining the process to achieve time savings, strengthening monitoring and implementation of Integrated Regional Resource Plan (IRRP) recommendations, and allowing written stakeholder comments between active regional planning cycles [6]. Key products identified are terms of reference for Technical Working Groups, a forecast standard, an updated regional planning process document, discontinuation of the stand-alone Scoping Assessment, and, if required, changes to the TSC, DSC and the IESO's licence [2][5].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3415,
+        "output_tokens": 664,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q18",
+      "question": "When did the Ontario Regulation 633/21 Green Button requirements for distributors come into effect?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 22.757041006116197,
+      "total_ms": 1806.9814580085222,
+      "retrieved": [
+        [
+          "954660",
+          "EB-2026-0230",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954660",
+          "EB-2026-0230",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955400",
+          null,
+          [
+            40,
+            40
+          ]
+        ],
+        [
+          "954328",
+          null,
+          [
+            39,
+            39
+          ]
+        ],
+        [
+          "954323",
+          null,
+          [
+            85,
+            85
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            80,
+            81
+          ]
+        ]
+      ],
+      "answer": "The requirements in Ontario Regulation 633/21 for distributors to make customer energy data available in Green Button format through Download My Data (DMD) and Connect My Data (CMD) came into effect on **November 1, 2023** [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3264,
+        "output_tokens": 88,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q19",
+      "question": "On what date will the OEB iSearch platform be retired?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.873666976811364,
+      "total_ms": 1929.082084010588,
+      "retrieved": [
+        [
+          "956571",
+          null,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956571",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954040",
+          "EB-2026-0066",
+          [
+            44,
+            44
+          ]
+        ],
+        [
+          "954321",
+          null,
+          [
+            132,
+            132
+          ]
+        ],
+        [
+          "956048",
+          "EB-2026-0129",
+          [
+            15,
+            15
+          ]
+        ],
+        [
+          "954323",
+          null,
+          [
+            197,
+            197
+          ]
+        ]
+      ],
+      "answer": "The OEB iSearch\u2122 platform will be retired and removed from service on **September 30, 2026** [1]. After that date, users can continue to find regulatory records through Regulatory Document Search (RDS), the OEB website and public web search tools, but the document analysis functionality currently available in iSearch\u2122 will no longer be available [1][2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2118,
+        "output_tokens": 119,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q20",
+      "question": "How often will distributors refresh Centralized Capacity Information Map (CCIM) capacity data?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 19.365915999514982,
+      "total_ms": 4722.91529100039,
+      "retrieved": [
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            3,
+            5
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "answer": "Distributors are to refresh CCIM capacity data on a **recurring quarterly schedule**, which the OEB formalized in its September 9, 2026 letter (EB-2019-0207) to improve the timeliness, consistency and accuracy of CCIM capacity data while reducing unnecessary submission and resubmission effort [1][3].\n\nThe quarterly cycle works as follows [6]:\n- **Hydro One upstream data submission:** first business day of March (Q1), June (Q2), September (Q3), December (Q4).\n- **LDC data submission deadline:** last business day of that same month.\n- **Planview quality control \u2013 data conflicts identified:** within 7 calendar days after the LDC's initial submission; **LDC conflict resolution:** within 7 calendar days of the conflict notification (late resolution may not be incorporated into the same refresh cycle) [6][3].\n- **CCIM data updated:** first week of May, August, November and February respectively [6].\n\nDistributors with no changes since the previous refresh are not required to submit data; instead they should email CCIMsupport@planview.ca and CCIM@oeb.ca before the quarterly submission deadline, stating whether the Load Capacity Data, the DER Hosting Capacity Data, or both remain unchanged, provided the eligibility criteria are met [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2665,
+        "output_tokens": 445,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q21",
+      "question": "What 2027 revenue requirement did the IESO propose in its application for 2026 to 2028 fees?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 18.999042018549517,
+      "total_ms": 4641.429667011835,
+      "retrieved": [
+        [
+          "954012",
+          "EB-2026-0142",
+          [
+            7,
+            7
+          ]
+        ],
+        [
+          "954012",
+          "EB-2026-0142",
+          [
+            11,
+            12
+          ]
+        ],
+        [
+          "954800",
+          "EB-2026-0142",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "954800",
+          "EB-2026-0142",
+          [
+            6,
+            7
+          ]
+        ],
+        [
+          "954800",
+          "EB-2026-0142",
+          [
+            11,
+            11
+          ]
+        ],
+        [
+          "954012",
+          "EB-2026-0142",
+          [
+            14,
+            15
+          ]
+        ]
+      ],
+      "answer": "The IESO's Fiscal Year 2027 revenue requirement is $357.2 million [1]. In the settlement proposal for EB\u20112026\u20110142, the parties agreed that the IESO's 2026, 2027 and 2028 revenue requirements of $328.8 million, $357.2 million and $364.4 million, respectively, are appropriate, subject to the continuation of certain existing commitments under Issue 5.0 and additional new or modified commitments (including enhanced reporting in the 2029\u20112031 Revenue Requirement Submission) [1]. OEB staff supported the settlement of the revenue requirement request, noting that a significant portion of the 2026 increase reflects legacy cost pressures and deferrals from the 2023\u20112025 period, driven primarily by the reversal of the Bill 124 cap on salary rate increases [3].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3623,
+        "output_tokens": 340,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q22",
+      "question": "When is the virtual kick-off meeting for Hydro One's 2027 Custom IR Annual Update application?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 18.78770798793994,
+      "total_ms": 2088.9489999972284,
+      "retrieved": [
+        [
+          "955119",
+          "EB-2026-0049",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            27,
+            28
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            16,
+            17
+          ]
+        ],
+        [
+          "935202",
+          "EB-2024-0155",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            17,
+            17
+          ]
+        ],
+        [
+          "955239",
+          "EB-2026-0169",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "answer": "OEB staff set the virtual kick-off meeting for **September 16, 2026**, for Hydro One Networks Inc.'s 2027 Custom IR Annual Update application (EB-2026-0049), at which Hydro One would meet its case manager and discuss matters related to the application; Hydro One was asked to inform its OEB case manager if that date is unworkable [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2697,
+        "output_tokens": 140,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q23",
+      "question": "Which party was approved as an intervenor in the Waasigan Transmission Line Partnership 2027 transmission rates case?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 12.677000020630658,
+      "total_ms": 2062.428583012661,
+      "retrieved": [
+        [
+          "954709",
+          "EB-2026-0078",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955275",
+          "EB-2026-0078",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955275",
+          "EB-2026-0078",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955959",
+          "EB-2026-0078",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954044",
+          "EB-2026-0066",
+          [
+            58,
+            59
+          ]
+        ],
+        [
+          "955959",
+          "EB-2026-0078",
+          [
+            9,
+            10
+          ]
+        ]
+      ],
+      "answer": "Gwayakocchigewin Limited Partnership (GLP First Nations) was approved as an intervenor in EB-2026-0078, and is eligible to apply for a cost award under the OEB's Practice Direction on Cost Awards; WTLP raised no objection to the request [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3221,
+        "output_tokens": 127,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q24",
+      "question": "Why did the OEB cancel the settlement conference in Enbridge Gas's 2027 rates proceeding?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 13.518291991204023,
+      "total_ms": 3014.263082994148,
+      "retrieved": [
+        [
+          "956228",
+          "EB-2026-0157",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956228",
+          "EB-2026-0157",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954566",
+          "EB-2025-0064",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "954815",
+          "EB-2026-0157",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "954837",
+          "EB-2026-0157",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            9,
+            10
+          ]
+        ]
+      ],
+      "answer": "The OEB cancelled the October 6\u20137, 2026 settlement conference in EB-2026-0157 because, upon further consideration of the evidentiary record, it determined it would be more procedurally efficient to move directly to written submissions following Enbridge Gas's interrogatory responses due September 22, 2026 [1][2].\n\nIn reaching that determination, the OEB considered the nature of the application, the approvals sought, and the interrogatories filed by intervenors and OEB staff, as well as the context of Enbridge Gas's approved Incentive Rate-setting framework, which established the annual rate-setting process under which the application was filed [1][2]. The OEB established a revised schedule for written submissions, and the September 22, 2026 deadline for Enbridge Gas's interrogatory responses remained unchanged [1].",
+      "answer_acc": false,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3164,
+        "output_tokens": 278,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q25",
+      "question": "Until when was National Research Council Canada's electricity wholesaler licence extended on an interim basis?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.3099160019774,
+      "total_ms": 2679.8642499779817,
+      "retrieved": [
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "956568",
+          "EB-2026-0197",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954044",
+          "EB-2026-0066",
+          [
+            50,
+            50
+          ]
+        ]
+      ],
+      "answer": "The OEB extended the term of National Research Council Canada's electricity wholesaler licence EW-2021-0230 on an interim basis until **February 28, 2027, or until the final determination of the electricity wholesale licence application, whichever is earlier**, with the conditions of licence unchanged [1]. The licence had been set to expire on September 1, 2026, and the interim extension was granted by delegated authority (Ceiran Bishop, Director, Performance Analytics & Compliance) on August 31, 2026 in EB-2026-0242; it is not a final decision on the application [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2887,
+        "output_tokens": 215,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q26",
+      "question": "What is Workstream 3 in the OEB's Distribution System Operator (DSO) Roadmap?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 20.74708297732286,
+      "total_ms": 4780.691083986312,
+      "retrieved": [
+        [
+          "954304",
+          null,
+          [
+            18,
+            18
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            20,
+            21
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            21,
+            22
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            19,
+            19
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            16,
+            17
+          ]
+        ]
+      ],
+      "answer": "Workstream 3, \"Mandatory Assessment,\" focuses on establishing mechanisms to ensure distributors proactively assess and plan for DSO capabilities and DER integration, strengthening forward-looking planning based on system conditions, customer needs and DSO readiness so that timely and cost-effective investments are made before challenges emerge [2][3].\n\nIt addresses three core questions: what all distributors are expected to do to assess their DSO capability needs; what criteria they should use to evaluate those needs; and how costs of DSO capability investments should be recovered and allocated [3]. In scope, it will develop the tools, criteria and reporting framework supporting a mandatory regulatory requirement for distributors to assess and demonstrate planning for current and anticipated DSO capability needs, with proposals generally expected to enumerate grid modernization investment needs based on DER penetration forecasts, distribution system needs that DERs could address, and functionality to harness DERs [3]. It will also consider reporting requirements to monitor realized benefits over time [4].\n\nThe OEB will draw on Workstreams 1 and 2 plus lessons from pilots, and convene a working group [4]. Expected outputs are a policy document and filing requirements; the outcome is a mandatory, standardized assessment framework [4]. In the interim, distributors are not precluded from bringing forward DSO capability applications [4].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3500,
+        "output_tokens": 461,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q27",
+      "question": "Did the OEB grant the Ross Firm Group intervenor status in Hydro One's St. Thomas expropriation proceeding?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.382249992806464,
+      "total_ms": 4222.212374996161,
+      "retrieved": [
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            7,
+            8
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            19,
+            19
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            3,
+            3
+          ]
+        ]
+      ],
+      "answer": "Only partially, and not for the proceeding as a whole. In Procedural Order No. 1 (June 23, 2026), the OEB granted the Ross Firm Group (RFG) intervenor status and cost award eligibility **specifically with respect to the Preliminary Issue** \u2014 whether Hydro One is eligible to apply for leave to expropriate under section 99 of the OEB Act [6].\n\nIn Procedural Order No. 2 (EB-2026-0083, September 16, 2026), the OEB denied RFG intervenor status, finding that its members do not have a substantial interest in this expropriation proceeding; RFG members had entered into a voluntary settlement agreement with Hydro One granting an irrevocable option to acquire their land interests [2][6]. The OEB ordered that \"RFG's participation and cost eligibility are denied for any other step of this proceeding,\" while establishing a schedule for RFG's cost claim related to the Preliminary Issue \u2014 RFG must submit that claim no later than September 28, 2026 [5][2].",
+      "answer_acc": false,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3913,
+        "output_tokens": 398,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q28",
+      "question": "How did the OEB allow interrogatories to be organized in the Lakefront Utilities 2027 rates proceeding?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 29.12099999957718,
+      "total_ms": 4920.710125006735,
+      "retrieved": [
+        [
+          "954008",
+          "EB-2026-0054",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954724",
+          "EB-2026-0054",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956108",
+          null,
+          [
+            128,
+            129
+          ]
+        ],
+        [
+          "956108",
+          null,
+          [
+            127,
+            128
+          ]
+        ],
+        [
+          "954724",
+          "EB-2026-0054",
+          [
+            14,
+            15
+          ]
+        ],
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            2,
+            3
+          ]
+        ]
+      ],
+      "answer": "In its Decision on Issues List and Procedural Order No. 2 (August 28, 2026) in EB-2026-0054, the OEB approved the filing of interrogatories according to the exhibit numbers in Lakefront Utilities' application, rather than requiring them to correspond to the Issues List [1].\n\nThis followed a request from parties, reported in OEB staff's August 21, 2026 cover letter accompanying the agreed-upon proposed Issues List, that the OEB waive the requirement under Rule 26.02(e)(ii) of the Rules of Practice and Procedure that interrogatories correspond to the Issues List [1]. The OEB also approved the proposed Issues List as filed (attached as Schedule A) and said it would consider requests for additional issues if raised by a party, as staff had noted parties might wish to raise further matters after interrogatory responses are received [1]. Consistent with this, OEB staff's interrogatories filed September 3, 2026 are organized by exhibit (e.g., \"Exhibit 1 \u2013 Administration,\" and questions numbered such as 4-Staff-26 under Exhibit 4) [2], [5].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3727,
+        "output_tokens": 425,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q29",
+      "question": "By what date must distributors that missed the deadline respond to the OEB's OESP billing practices letter?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.173833010019735,
+      "total_ms": 3038.185292010894,
+      "retrieved": [
+        [
+          "956769",
+          null,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956228",
+          "EB-2026-0157",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954724",
+          "EB-2026-0054",
+          [
+            28,
+            29
+          ]
+        ],
+        [
+          "956048",
+          "EB-2026-0129",
+          [
+            15,
+            15
+          ]
+        ],
+        [
+          "955016",
+          "EB-2026-0152",
+          [
+            87,
+            87
+          ]
+        ]
+      ],
+      "answer": "Distributors and USMPs that did not respond by the original deadline must provide a complete response no later than **September 30, 2026** [1].\n\nThe OEB's original letter of June 23, 2026 to all licensed electricity distributors and USMPs asked five questions about OESP billing practices, plus a management attestation confirming whether the issue had occurred, with responses due July 7, 2026 [1]. The follow-up letter, signed by Ceiran Bishop, Director, Performance Analytics & Compliance, was sent only to those from whom the OEB had not yet received a response, and directs that submissions and questions go by email to Jonathan.Peng@oeb.ca [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2176,
+        "output_tokens": 242,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    },
+    {
+      "id": "q30",
+      "question": "When did the OEB start its consultation on the regulatory treatment of Stream 2 local eDSM programs?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 7.890582986874506,
+      "total_ms": 3114.059791987529,
+      "retrieved": [
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            24,
+            25
+          ]
+        ],
+        [
+          "955058",
+          "EB-2026-0155",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954985",
+          "EB-2025-0295",
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "answer": "The OEB initiated the consultation on July 23, 2025, when it issued a letter launching the review of the regulatory treatment of electricity demand-side management (eDSM) programs delivered by electricity distributors that provide both local distribution benefits and broader energy system benefits (\"Stream 2 local eDSM programs\") [1]. The letter also indicated that cost awards would be available to eligible persons, recoverable from rate-regulated electricity distributors, and a Decision on Cost Eligibility followed on September 9, 2025 [1]. The consultation carries docket number EB-2025-0156 [3].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3513,
+        "output_tokens": 212,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      }
+    }
+  ]
+}

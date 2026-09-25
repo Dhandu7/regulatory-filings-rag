@@ -1,0 +1,1366 @@
+{
+  "summary": {
+    "n_questions": 22,
+    "question_set": "holdout",
+    "k": 6,
+    "retrieval": "dense",
+    "expand_window": 0,
+    "hybrid": false,
+    "index_version": "v1-d4fd9d711f72__bge_small_en_v1_5",
+    "doc_hit@1": 0.5454545454545454,
+    "doc_hit@3": 0.8181818181818182,
+    "doc_hit@6": 0.8636363636363636,
+    "answer_hit@6": 0.9090909090909091,
+    "mrr": 0.6704545454545454,
+    "retrieval_ms_p50": 8.16895900061354,
+    "retrieval_ms_p95": 12.264999997569248,
+    "total_ms_p50": 9.473208017880097,
+    "total_ms_p95": 13.443417003145441,
+    "retrieval_ms_mean": 8.586380592367442,
+    "answer_acc": null
+  },
+  "rows": [
+    {
+      "id": "h01",
+      "question": "When did the OEB begin its review of requirements for distributors connecting Distributed Energy Resources?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 8.923916990170255,
+      "total_ms": 10.346374998334795,
+      "retrieved": [
+        [
+          "954304",
+          null,
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954318",
+          "EB-2026-0056",
+          [
+            44,
+            45
+          ]
+        ],
+        [
+          "955869",
+          "EB-2019-0207",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955869",
+          "EB-2019-0207",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            8,
+            8
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h02",
+      "question": "When did Discovery Kidd Creek Inc. file a complete application for an electricity wholesaler licence?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 6.983707979088649,
+      "total_ms": 8.387749985558912,
+      "retrieved": [
+        [
+          "956568",
+          "EB-2026-0197",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            2,
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h03",
+      "question": "What was the date of the OEB's acknowledgment letter for London Hydro's 2027 Cost of Service application?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 12.601833994267508,
+      "total_ms": 14.169208996463567,
+      "retrieved": [
+        [
+          "956450",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955441",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956411",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            390,
+            392
+          ]
+        ],
+        [
+          "954327",
+          null,
+          [
+            28,
+            28
+          ]
+        ],
+        [
+          "954329",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h04",
+      "question": "What was the date of the OEB's acknowledgment letter for Toronto Hydro's 2027 distribution rates application?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 8.088916016276926,
+      "total_ms": 9.235250006895512,
+      "retrieved": [
+        [
+          "953972",
+          "EB-2026-0073",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954929",
+          "EB-2026-0073",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954930",
+          "EB-2026-0073",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955596",
+          "EB-2026-0051",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955332",
+          "EB-2026-0073",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956450",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h05",
+      "question": "Which Indigenous organization applied late and was found eligible for cost awards in the Gas-Electric Co-ordination and Information Sharing consultation?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 9.857833996647969,
+      "total_ms": 11.167125019710511,
+      "retrieved": [
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955016",
+          "EB-2026-0152",
+          [
+            90,
+            91
+          ]
+        ],
+        [
+          "955016",
+          "EB-2026-0152",
+          [
+            89,
+            89
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h06",
+      "question": "What did the OEB decide on Chosen Energy Limited's January 2026 application for an electricity retailer licence?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 8.187875006115064,
+      "total_ms": 9.795667021535337,
+      "retrieved": [
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h07",
+      "question": "Until when were E.L.K. Energy and ENWIN temporarily exempted from section 2.1.2 of the Affiliate Relationships Code?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 10.44166600331664,
+      "total_ms": 12.005750002572313,
+      "retrieved": [
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h08",
+      "question": "For what term did the OEB approve renewing Enbridge Gas's franchise agreement with the Regional Municipality of York?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 7.764499983750284,
+      "total_ms": 9.473208017880097,
+      "retrieved": [
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            6,
+            7
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h09",
+      "question": "How long is the transmission line in Hydro One's Welland-Thorold Project?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": true,
+      "retrieval_ms": 9.316083014709875,
+      "total_ms": 10.655333986505866,
+      "retrieved": [
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            15,
+            15
+          ]
+        ],
+        [
+          "954650",
+          "EB-2025-0290",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            22,
+            22
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h10",
+      "question": "Which party was granted cost eligibility in the consultation reviewing EPCOR's 2026 natural gas supply plan updates?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 8.017207990633324,
+      "total_ms": 9.15966700995341,
+      "retrieved": [
+        [
+          "944509",
+          "EB-2026-0086",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "944509",
+          "EB-2026-0086",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "944509",
+          "EB-2026-0086",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "956232",
+          null,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956924",
+          "EB-2026-0149",
+          [
+            64,
+            67
+          ]
+        ],
+        [
+          "956924",
+          "EB-2026-0149",
+          [
+            63,
+            64
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h11",
+      "question": "How long is the transmission line in Hydro One's Northeast Power Line Project?",
+      "first_relevant_rank": 4,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 7.269499998074025,
+      "total_ms": 8.95945800584741,
+      "retrieved": [
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            13,
+            14
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955551",
+          "EB-2026-0154",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            6,
+            6
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h12",
+      "question": "Which transformer stations will Hydro One's roughly 117-kilometre southwestern Ontario transmission line connect?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": false,
+      "retrieval_ms": 5.599125026492402,
+      "total_ms": 6.902541994350031,
+      "retrieved": [
+        [
+          "954389",
+          "EB-2026-0155",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            81,
+            81
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h13",
+      "question": "By when may OEB staff submit interrogatories on Wataynikaneyap Power's EPC COVID-related deferral account application?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 12.264999997569248,
+      "total_ms": 13.443417003145441,
+      "retrieved": [
+        [
+          "956225",
+          "EB-2026-0180",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "956225",
+          "EB-2026-0180",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            22,
+            22
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h14",
+      "question": "When did Enbridge Gas file its application to dispose of 2025 deferral and variance account balances?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 10.320708010112867,
+      "total_ms": 12.016958004096523,
+      "retrieved": [
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            10,
+            11
+          ]
+        ],
+        [
+          "955934",
+          "EB-2026-0108",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            26,
+            26
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            25,
+            25
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            14,
+            14
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            26,
+            27
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h15",
+      "question": "Why will the OEB review Hydro Hawkesbury's 2027 rate increase in a particular context?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 7.764625013805926,
+      "total_ms": 8.997124998131767,
+      "retrieved": [
+        [
+          "954142",
+          "EB-2026-0048",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956445",
+          "EB-2026-0048",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954139",
+          "EB-2026-0048",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954929",
+          "EB-2026-0073",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954147",
+          "EB-2026-0038",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956445",
+          "EB-2026-0048",
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h16",
+      "question": "What account disposition did Niagara-on-the-Lake Hydro request in its 2027 IRM application?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 8.838957990519702,
+      "total_ms": 10.456041985889897,
+      "retrieved": [
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955707",
+          "EB-2026-0060",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956681",
+          "EB-2026-0069",
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h17",
+      "question": "Which rate riders did Newmarket-Tay Power Distribution ask to extend for the 2028 rate year?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": false,
+      "retrieval_ms": 8.261790993856266,
+      "total_ms": 9.781624976312742,
+      "retrieved": [
+        [
+          "956888",
+          "EB-2026-0221",
+          [
+            66,
+            66
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            11,
+            12
+          ]
+        ],
+        [
+          "956907",
+          "EB-2026-0225",
+          [
+            17,
+            18
+          ]
+        ],
+        [
+          "955056",
+          "EB-2026-0221",
+          [
+            172,
+            173
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            13,
+            14
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            7,
+            8
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h18",
+      "question": "How many written submissions did the OEB receive on the Spending Pattern Analysis report?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 8.99120801477693,
+      "total_ms": 10.413499985588714,
+      "retrieved": [
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            9,
+            9
+          ]
+        ],
+        [
+          "955991",
+          "EB-2026-0245",
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955869",
+          "EB-2019-0207",
+          [
+            3,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h19",
+      "question": "When does the OEB expect the Next Generation Rate Framework consultation to resume?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 8.16895900061354,
+      "total_ms": 9.464332979405299,
+      "retrieved": [
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956228",
+          "EB-2026-0157",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956565",
+          "EB-2026-0065",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h20",
+      "question": "When did the Ontario government release its Integrated Energy Plan?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 6.499167007859796,
+      "total_ms": 7.55008400301449,
+      "retrieved": [
+        [
+          "955226",
+          null,
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            18,
+            18
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            16,
+            17
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            18,
+            18
+          ]
+        ],
+        [
+          "955486",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955991",
+          "EB-2026-0245",
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h21",
+      "question": "Into which two components did the OEB split its review of DER valuation?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 7.561375008663163,
+      "total_ms": 9.148125012870878,
+      "retrieved": [
+        [
+          "954563",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            10,
+            10
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            49,
+            50
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            40,
+            41
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            53,
+            53
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "h22",
+      "question": "Which towns does Hydro One's D6 Relocation Project transmission line pass through?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 7.176415994763374,
+      "total_ms": 8.775958995101973,
+      "retrieved": [
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "956386",
+          "EB-2026-0112",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "956386",
+          "EB-2026-0112",
+          [
+            2,
+            3
+          ]
+        ]
+      ]
+    }
+  ]
+}

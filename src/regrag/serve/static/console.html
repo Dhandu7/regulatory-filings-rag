@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulatory Filings RAG</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --panel-2: #f0f2f5; --text: #1b1f24; --muted: #5b6573;
+  --border: #dfe3e8; --accent: #1f5fbf; --accent-soft: #e5eefb; --ok: #1d7a46; --ok-soft: #e3f4ea;
+  --warn: #9a6200; --warn-soft: #fbf0db; --bad: #b3261e; --bad-soft: #fbe6e4;
+  --code-bg: #0f1720; --code-text: #d7e0ea; --shadow: 0 1px 2px rgba(16,24,40,.06);
+  --radius: 10px; --on-accent: #ffffff; --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216; --panel: #171b21; --panel-2: #1e232b; --text: #e6e9ee; --muted: #9aa4b2;
+    --border: #2a313b; --accent: #7fb0ff; --accent-soft: #1b2a42; --ok: #5fd08f; --ok-soft: #14301f;
+    --warn: #f0b458; --warn-soft: #33270f; --bad: #ff8a80; --bad-soft: #3a1714;
+    --code-bg: #0a0d11; --code-text: #d7e0ea; --shadow: none; --on-accent: #0b1a33;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1216; --panel: #171b21; --panel-2: #1e232b; --text: #e6e9ee; --muted: #9aa4b2;
+  --border: #2a313b; --accent: #7fb0ff; --accent-soft: #1b2a42; --ok: #5fd08f; --ok-soft: #14301f;
+  --warn: #f0b458; --warn-soft: #33270f; --bad: #ff8a80; --bad-soft: #3a1714;
+  --code-bg: #0a0d11; --code-text: #d7e0ea; --shadow: none; --on-accent: #0b1a33;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+header { background: var(--panel); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+.topbar { display: flex; align-items: center; gap: 16px; padding: 12px 0 8px; flex-wrap: wrap; }
+.brand { font-weight: 650; font-size: 17px; letter-spacing: -.01em; }
+.brand small { display: block; font-weight: 400; color: var(--muted); font-size: 12.5px; }
+.pills { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.pill { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--panel-2); color: var(--muted);
+  border: 1px solid var(--border); white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.pill b { color: var(--text); font-weight: 600; }
+.pill.ok { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+.pill.warn { background: var(--warn-soft); color: var(--warn); border-color: transparent; }
+.pill.run { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+nav { display: flex; gap: 4px; overflow-x: auto; }
+nav button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px 10px;
+  font: inherit; color: var(--muted); cursor: pointer; white-space: nowrap; }
+nav button.active { color: var(--text); border-bottom-color: var(--accent); font-weight: 600; }
+main { padding: 20px 0 48px; }
+section.tab { display: none; } section.tab.active { display: block; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px; }
+.card + .card { margin-top: 16px; }
+h2 { font-size: 16px; margin: 0 0 4px; } h3 { font-size: 14.5px; margin: 0 0 4px; }
+.sub { color: var(--muted); font-size: 13.5px; margin: 0 0 12px; }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+label { font-size: 12.5px; color: var(--muted); display: block; margin-bottom: 3px; }
+input, select, textarea { font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--border);
+  border-radius: 8px; padding: 7px 9px; width: 100%; }
+textarea { resize: vertical; min-height: 64px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+.row > .f { flex: 1 1 130px; min-width: 0; }
+.check { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--text); margin: 0; }
+.check input { width: auto; }
+button.btn { font: inherit; font-weight: 600; font-size: 14px; border-radius: 8px; padding: 8px 14px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent); }
+button.btn.secondary { background: var(--panel); color: var(--accent); }
+button.btn.danger { background: var(--panel); color: var(--bad); border-color: var(--bad); }
+button.btn:disabled { opacity: .5; cursor: not-allowed; }
+button.link { background: none; border: 0; color: var(--accent); cursor: pointer; font: inherit; padding: 0; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0 0; }
+.chip { font-size: 12.5px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--panel-2); color: var(--text); cursor: pointer; text-align: left; }
+.chip:hover { border-color: var(--accent); }
+.answer { font-size: 15.5px; line-height: 1.65; }
+.answer p { margin: 0 0 10px; }
+.cite { display: inline-block; min-width: 20px; padding: 0 5px; margin: 0 1px; border-radius: 5px; font-size: 11.5px;
+  font-weight: 700; line-height: 18px; text-align: center; vertical-align: 2px; background: var(--accent-soft);
+  color: var(--accent); cursor: pointer; border: 0; }
+.meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.src { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: var(--panel); }
+.src + .src { margin-top: 8px; }
+.src.flash { outline: 2px solid var(--accent); }
+.src-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.num { font-weight: 700; color: var(--accent); font-family: var(--mono); }
+.src-title { font-weight: 600; overflow-wrap: anywhere; }
+.src-meta { font-size: 12.5px; color: var(--muted); margin: 2px 0 6px; }
+.snippet { font-size: 13px; color: var(--muted); white-space: pre-wrap; overflow-wrap: anywhere;
+  max-height: 7.5em; overflow: hidden; }
+.badge { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; padding: 1px 7px;
+  border-radius: 999px; background: var(--panel-2); color: var(--muted); }
+.badge.ok { background: var(--ok-soft); color: var(--ok); } .badge.warn { background: var(--warn-soft); color: var(--warn); }
+.badge.bad { background: var(--bad-soft); color: var(--bad); } .badge.run { background: var(--accent-soft); color: var(--accent); }
+.stages { display: flex; gap: 0; overflow-x: auto; margin-bottom: 16px; }
+.stage { flex: 1 0 150px; background: var(--panel); border: 1px solid var(--border); padding: 12px 14px; position: relative; }
+.stage:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.stage:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.stage + .stage { border-left: 0; }
+.stage .k { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.stage .v { font-size: 22px; font-weight: 650; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.stage .d { font-size: 12px; color: var(--muted); }
+.cmd { display: flex; flex-direction: column; }
+.cmd .body { flex: 1; }
+.cli { font-family: var(--mono); font-size: 12px; background: var(--panel-2); border-radius: 6px; padding: 6px 8px;
+  margin: 10px 0; color: var(--muted); overflow-wrap: anywhere; }
+.cmd.primary { border-color: var(--accent); }
+.console { background: var(--code-bg); color: var(--code-text); font-family: var(--mono); font-size: 12.5px;
+  line-height: 1.5; border-radius: 8px; padding: 12px; height: 380px; overflow: auto; white-space: pre-wrap;
+  overflow-wrap: anywhere; margin-top: 10px; }
+.console-head { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.jobs { margin-top: 10px; font-size: 13px; }
+.jobs button { display: flex; gap: 8px; width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--border);
+  padding: 6px 2px; font: inherit; color: var(--text); cursor: pointer; align-items: center; }
+.jobs button.sel { background: var(--panel-2); }
+.jobs .when { color: var(--muted); margin-left: auto; font-variant-numeric: tabular-nums; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.tile { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+.tile .k { font-size: 12.5px; color: var(--muted); } .tile .v { font-size: 24px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-size: 12px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+td.num-cell, th.num-cell { text-align: right; font-variant-numeric: tabular-nums; }
+.metric-bar { height: 6px; border-radius: 3px; background: var(--panel-2); margin-top: 4px; overflow: hidden; }
+.metric-bar span { display: block; height: 100%; background: var(--accent); }
+.muted { color: var(--muted); } .mono { font-family: var(--mono); font-size: 12.5px; }
+.empty { color: var(--muted); font-size: 14px; padding: 16px 0; }
+.notice { font-size: 13px; padding: 8px 12px; border-radius: 8px; background: var(--warn-soft); color: var(--warn); margin-top: 10px; }
+.error { background: var(--bad-soft); color: var(--bad); }
+.spinner { width: 14px; height: 14px; border: 2px solid var(--accent-soft); border-top-color: var(--accent); border-radius: 50%;
+  display: inline-block; animation: spin .8s linear infinite; vertical-align: -2px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.theme-toggle { background: none; border: 1px solid var(--border); border-radius: 8px; color: var(--muted); cursor: pointer; padding: 3px 8px; font: inherit; font-size: 12px; }
+@media (max-width: 640px) {
+  header { position: static; } .pills { margin-left: 0; }
+  .card[style*="sticky"] { position: static !important; }
+  .stage { flex-basis: 130px; } .console { height: 300px; } .answer { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">Regulatory Filings RAG<small>Ontario Energy Board filings · bronze → silver → gold → cited answers</small></div>
+      <div class="pills" id="pills"><span class="pill">loading…</span></div>
+      <button class="theme-toggle" id="theme" title="Toggle light/dark">◐</button>
+    </div>
+    <nav id="tabs">
+      <button data-tab="ask" class="active">Ask</button>
+      <button data-tab="pipeline">Pipeline</button>
+      <button data-tab="data">Data</button>
+      <button data-tab="eval">Evaluation</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ============================================================ ASK -->
+  <section class="tab active" id="tab-ask">
+    <div class="card">
+      <h2>Ask the filings</h2>
+      <p class="sub">Retrieves the most relevant passages from the index and answers with numbered citations to the source filing, docket and page.</p>
+      <textarea id="q" rows="2" placeholder="e.g. When does the extended abeyance of Enbridge Gas's Lanark and Balderson project end?"></textarea>
+      <div class="chips" id="examples"></div>
+      <div class="row" style="margin-top:12px">
+        <div class="f"><label for="k">Sources (k)</label>
+          <select id="k"><option>3</option><option>4</option><option selected>6</option><option>8</option><option>10</option></select></div>
+        <div class="f"><label for="retrieval">Retrieval</label>
+          <select id="retrieval"><option value="">default</option><option value="rerank">rerank</option><option value="dense">dense</option><option value="hybrid">hybrid</option></select></div>
+        <div class="f"><label for="docket">Docket filter</label><input id="docket" placeholder="EB-2025-0295"></div>
+        <div class="f"><label for="dfrom">Filed from</label><input id="dfrom" type="date"></div>
+        <div class="f"><label for="dto">Filed to</label><input id="dto" type="date"></div>
+      </div>
+      <div class="row" style="margin-top:12px; justify-content: space-between">
+        <label class="check"><input type="checkbox" id="usellm" checked> Generate answer with Claude</label>
+        <button class="btn" id="askbtn">Ask</button>
+      </div>
+      <div id="llmnote"></div>
+    </div>
+    <div id="result"></div>
+  </section>
+
+  <!-- ============================================================ PIPELINE -->
+  <section class="tab" id="tab-pipeline">
+    <div class="stages" id="stages"></div>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <div class="grid g3" id="commands"></div>
+      </div>
+      <div class="card" style="position: sticky; top: 110px">
+        <div class="console-head">
+          <h2 style="margin:0">Console</h2>
+          <span id="jobstate"></span>
+          <button class="btn danger" id="cancelbtn" style="margin-left:auto; display:none">Cancel</button>
+        </div>
+        <div class="console" id="console">Run a command to see its output here.</div>
+        <div class="jobs" id="jobs"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ DATA -->
+  <section class="tab" id="tab-data">
+    <div class="tiles" id="tiles"></div>
+    <div class="card" style="margin-top:16px">
+      <h2>Index versions</h2>
+      <p class="sub">Each chunking config × embedding model builds its own index. Activating one switches what the API serves; rolling back is the same action.</p>
+      <div class="table-wrap" id="versions"></div>
+    </div>
+    <div class="card">
+      <h2>Latest bronze validation</h2>
+      <p class="sub" id="valsub">Checks run after every pull. A failed <b>error</b> check blocks the run; failed <b>warn</b> checks quarantine the affected files.</p>
+      <div class="table-wrap" id="validation"></div>
+    </div>
+    <div class="card">
+      <h2>Quarantine</h2>
+      <p class="sub">Files held out of the index, with the reason.</p>
+      <div class="table-wrap" id="quarantine"></div>
+    </div>
+    <div class="card">
+      <div class="row" style="justify-content: space-between; align-items: center">
+        <div><h2>Documents</h2><p class="sub" style="margin:0">Parsed filings in the silver layer.</p></div>
+        <div style="flex: 0 1 320px"><input id="docsearch" placeholder="Search title or docket…"></div>
+      </div>
+      <div class="table-wrap" id="documents" style="margin-top:12px"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ EVAL -->
+  <section class="tab" id="tab-eval">
+    <div class="card">
+      <div class="row" style="justify-content: space-between; align-items: flex-start">
+        <div><h2>Golden-set evaluation</h2>
+          <p class="sub" style="margin:0">30 questions written from filings in the corpus; every expected answer string is verified to appear in its source document. Answer cache off, measured after a warm-up.</p></div>
+        <div class="row">
+          <button class="btn secondary" data-eval="rerank">Run rerank eval</button>
+          <button class="btn secondary" data-eval="dense">Run dense eval</button>
+        </div>
+      </div>
+      <div class="table-wrap" id="evalsummary" style="margin-top:14px"></div>
+    </div>
+    <div class="card">
+      <div class="row" style="justify-content: space-between; align-items: center">
+        <h2 style="margin:0">Per question</h2>
+        <div style="flex: 0 1 200px"><select id="evalmode"></select></div>
+      </div>
+      <div class="table-wrap" id="evalrows" style="margin-top:12px"></div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = n => (n ?? 0).toLocaleString();
+const pct = v => v == null ? "–" : (v * 100).toFixed(1) + "%";
+const ms = v => v == null ? "–" : (v < 10 ? v.toFixed(1) : Math.round(v)) + " ms";
+
+async function api(path, opts = {}) {
+  const r = await fetch(path, { headers: { "content-type": "application/json" }, ...opts });
+  const body = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(body.detail || r.statusText);
+  return body;
+}
+
+// ---------------------------------------------------------------- theme + tabs
+(() => {
+  let t = null;
+  try { t = localStorage.getItem("regrag-theme"); } catch {}
+  if (t) document.documentElement.dataset.theme = t;
+  $("#theme").onclick = () => {
+    const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+    const cur = document.documentElement.dataset.theme || (dark ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("regrag-theme", next); } catch {}
+  };
+})();
+function showTab(name) {
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.tab === name));
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("active", s.id === "tab-" + name));
+  if (name === "data") loadData();
+  if (name === "eval") loadEval();
+  try { history.replaceState(null, "", "#" + name); } catch {}
+}
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
+
+// ---------------------------------------------------------------- status
+let STATUS = null;
+async function loadStatus() {
+  try { STATUS = await api("/api/status"); } catch (e) { $("#pills").innerHTML = `<span class="pill warn">API error: ${esc(e.message)}</span>`; return; }
+  const s = STATUS, pills = [];
+  pills.push(`<span class="pill" title="${esc(s.active_index)}">index <b>${esc((s.active_index || "none").split("__")[0])}</b></span>`);
+  pills.push(`<span class="pill">${fmt(s.counts.chunks)} chunks · ${fmt(s.counts.documents_ok)} docs</span>`);
+  pills.push(s.llm ? `<span class="pill ok">Claude: ${esc(s.llm)}</span>` : `<span class="pill warn" title="Set ANTHROPIC_API_KEY and restart the server">LLM off · extractive</span>`);
+  if (s.running_job) pills.push(`<span class="pill run"><span class="spinner"></span> ${esc(s.running_job.command)} running</span>`);
+  $("#pills").innerHTML = pills.join("");
+  $("#usellm").disabled = !s.llm;
+  if (!s.llm) { $("#usellm").checked = false; $("#llmnote").innerHTML = `<div class="notice">No Claude credentials on the server, so answers are extractive (best-matching cited sentences). Set <span class="mono">ANTHROPIC_API_KEY</span> and restart <span class="mono">make serve</span> for generated answers.</div>`; }
+  else $("#llmnote").innerHTML = "";
+  renderStages();
+  if (!s.jobs_enabled && !$("#jobsoff")) {
+    $("#commands").insertAdjacentHTML("beforebegin", `<div class="notice" id="jobsoff" style="margin:0 0 16px">Pipeline commands are disabled in this deployment. The pipeline runs as the <b>regrag-daily-incremental</b> Databricks job; trigger it from the Jobs UI or with <span class="mono">databricks bundle run regrag_daily</span>.</div>`);
+    document.querySelectorAll("[data-run], [data-eval]").forEach(b => b.disabled = true);
+  }
+  if (s.running_job && !CURRENT_JOB) followJob(s.running_job.id);
+}
+
+// ---------------------------------------------------------------- ASK
+const EXAMPLES = [
+  "When does the extended abeyance of Enbridge Gas's Lanark and Balderson Community Expansion Project end?",
+  "How much was the School Energy Coalition awarded in costs in the GrandBridge Energy non-wires solutions proceeding?",
+  "What 2027 revenue requirement did the IESO propose in its application for 2026 to 2028 fees?",
+  "How long is the 230kV line in Hydro One's Durham Kawartha Power Line Project?",
+  "Why did the OEB cancel the settlement conference in Enbridge Gas's 2027 rates proceeding?",
+];
+$("#examples").innerHTML = EXAMPLES.map((q, i) => `<button class="chip" data-i="${i}">${esc(q.length > 70 ? q.slice(0, 68) + "…" : q)}</button>`).join("");
+$("#examples").onclick = e => { const b = e.target.closest(".chip"); if (b) { $("#q").value = EXAMPLES[b.dataset.i]; ask(); } };
+$("#askbtn").onclick = ask;
+$("#q").addEventListener("keydown", e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) ask(); });
+
+async function ask() {
+  const question = $("#q").value.trim();
+  if (question.length < 3) { $("#q").focus(); return; }
+  const payload = { question, k: +$("#k").value, use_llm: $("#usellm").checked,
+    docket: $("#docket").value.trim() || null, date_from: $("#dfrom").value || null, date_to: $("#dto").value || null,
+    retrieval: $("#retrieval").value || null };
+  $("#askbtn").disabled = true;
+  $("#result").innerHTML = `<div class="card" style="margin-top:16px"><span class="spinner"></span> Retrieving${payload.use_llm ? " and generating" : ""}…</div>`;
+  try { renderAnswer(await api("/ask", { method: "POST", body: JSON.stringify(payload) })); }
+  catch (e) { $("#result").innerHTML = `<div class="card notice error" style="margin-top:16px">${esc(e.message)}</div>`; }
+  finally { $("#askbtn").disabled = false; }
+}
+
+function renderAnswerText(text) {
+  const html = esc(text).replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>").replace(/\[(\d+(?:\s*,\s*\d+)*)\]/g, (_, g) =>
+    g.split(/\s*,\s*/).map(n => `<button class="cite" data-n="${n}" title="Jump to source ${n}">${n}</button>`).join(""));
+  return html.split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g, "<br>")}</p>`).join("");
+}
+
+function renderAnswer(d) {
+  const lat = d.latency_ms || {}, u = d.usage || {};
+  const meta = [
+    `<span class="pill">${esc(d.model)}</span>`,
+    d.retrieval ? `<span class="pill">${esc(d.retrieval)} retrieval</span>` : "",
+    `<span class="pill ${d.cache === "hit" ? "ok" : ""}">answer cache ${esc(d.cache)}</span>`,
+    lat.retrieval != null ? `<span class="pill">retrieval ${ms(lat.retrieval)}</span>` : "",
+    lat.generation ? `<span class="pill">generation ${ms(lat.generation)}</span>` : "",
+    `<span class="pill">total ${ms(lat.total)}</span>`,
+    u.input_tokens != null ? `<span class="pill">${fmt(u.input_tokens)} in · ${fmt(u.output_tokens)} out · ${fmt(u.cache_read_input_tokens)} from prompt cache</span>` : "",
+    `<span class="pill mono" title="index version">${esc(d.index_version)}</span>`,
+  ].join("");
+  const sources = (d.sources || []).map(s => `
+    <div class="src" id="src-${s.n}">
+      <div class="src-head"><span class="num">[${s.n}]</span>
+        <a class="src-title" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>
+        ${s.cited ? `<span class="badge ok">cited</span>` : ""}</div>
+      <div class="src-meta">${esc(s.docket || "no docket")} · ${esc(s.date)} · ${s.section ? esc(s.section) + " · " : ""}p. ${esc(s.pages[0])}${s.pages[1] !== s.pages[0] ? "–" + esc(s.pages[1]) : ""} · score ${s.score}</div>
+      <div class="snippet">${esc(s.snippet)}</div>
+    </div>`).join("");
+  $("#result").innerHTML = `
+    <div class="card" style="margin-top:16px"><h3>Answer</h3><div class="answer">${renderAnswerText(d.answer)}</div><div class="meta">${meta}</div></div>
+    <div class="card"><h3>Sources</h3><p class="sub">Retrieved passages, in rank order. Titles link to the filing on the OEB Regulatory Document Search.</p>${sources || '<div class="empty">No passages matched.</div>'}</div>`;
+}
+$("#result").addEventListener("click", e => {
+  const c = e.target.closest(".cite"); if (!c) return;
+  const el = $("#src-" + c.dataset.n); if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 1400);
+});
+
+// ---------------------------------------------------------------- PIPELINE
+function renderStages() {
+  if (!STATUS) return;
+  const c = STATUS.counts, v = STATUS.latest_validation;
+  const wm = Object.entries(STATUS.watermarks || {}).map(([k, x]) => `${k}: ${(x.watermark_registered_at || "").slice(0, 16).replace("T", " ")}`).join(", ");
+  const stages = [
+    ["Bronze", fmt(c.bronze_records), "raw files + manifest" + (wm ? ` · watermark ${wm}` : "")],
+    ["Validation", v ? v.status : "–", v ? `last run: ${v.landed} landed, ${v.fetch_errors} errors` : "no runs yet"],
+    ["Silver", fmt(c.documents_ok), `${fmt(c.duplicates)} duplicates · ${fmt(c.quarantined)} quarantined`],
+    ["Chunks", fmt(c.chunks), esc(STATUS.chunk_config_version)],
+    ["Gold", (STATUS.active_index || "–").split("__")[0], "active index version"],
+  ];
+  $("#stages").innerHTML = stages.map(([k, val, d]) => `<div class="stage"><div class="k">${k}</div><div class="v">${esc(val)}</div><div class="d">${d}</div></div>`).join("");
+}
+
+let CHUNK_CONFIGS = [];
+const today = new Date().toISOString().slice(0, 10);
+const F = {
+  source: () => `<div class="f"><label>Source</label><select name="source"><option value="oeb">OEB</option><option value="edgar">SEC EDGAR</option></select></div>`,
+  since: () => `<div class="f"><label>Since</label><input type="date" name="since"></div>`,
+  until: () => `<div class="f"><label>Until</label><input type="date" name="until"></div>`,
+  max_docs: (v = "") => `<div class="f"><label>Max docs</label><input type="number" min="1" max="5000" name="max_docs" value="${v}" placeholder="all"></div>`,
+  limit: () => `<div class="f"><label>Limit</label><input type="number" min="1" name="limit" placeholder="all"></div>`,
+  chunking_config: () => `<div class="f"><label>Chunking config</label><select name="chunking_config"><option value="">default</option>${CHUNK_CONFIGS.map(c => `<option>${esc(c)}</option>`).join("")}</select></div>`,
+  k: () => `<div class="f"><label>k</label><input type="number" min="1" max="20" name="k" value="6"></div>`,
+  retrieval: () => `<div class="f"><label>Retrieval</label><select name="retrieval"><option value="">default</option><option>rerank</option><option>dense</option><option>hybrid</option></select></div>`,
+  skip_dbt: () => `<label class="check"><input type="checkbox" name="skip_dbt"> skip dbt</label>`,
+  no_activate: () => `<label class="check"><input type="checkbox" name="no_activate"> don't activate</label>`,
+  with_llm: () => `<label class="check"><input type="checkbox" name="with_llm"> with Claude answers</label>`,
+};
+const COMMANDS = [
+  { id: "run", title: "Full pipeline", primary: true, fields: ["source", "since", "max_docs", "skip_dbt"],
+    desc: "Incremental run: ingest → validation gate → silver → rechunk backfill → dbt gate → gold." },
+  { id: "ingest", title: "1 · Ingest (bronze)", fields: ["source", "since", "until", "max_docs"],
+    desc: "Pull new filings since the watermark, land raw files with source, timestamp and hash, then validate." },
+  { id: "validation", title: "Validation report", fields: [], desc: "Print the latest post-pull validation report." },
+  { id: "silver", title: "2 · Silver", fields: ["limit"], desc: "Parse text and tables, dedup, quarantine bad files, chunk with metadata." },
+  { id: "rechunk", title: "Rechunk", fields: ["chunking_config"], desc: "Build or backfill a chunk version from stored pages. No re-download, no re-parse." },
+  { id: "dbt", title: "dbt tests", fields: [], desc: "dbt build (schema, relationships, singular tests) and source freshness." },
+  { id: "gold", title: "3 · Gold", fields: ["chunking_config", "no_activate"], desc: "Embed new chunks (cached) into a versioned pgvector index and activate it." },
+  { id: "watch", title: "Watch (one poll)", fields: [], desc: "Check the regulator once for newly registered filings and process them." },
+  { id: "eval", title: "4 · Evaluate", fields: ["k", "retrieval", "with_llm"], desc: "Golden-set hit rate, MRR and latency. Results appear on the Evaluation tab." },
+];
+
+function cliFor(cmd, p) {
+  const a = ["regrag", cmd.id === "watch" ? "watch --once" : cmd.id];
+  const flag = (k, v) => v !== undefined && v !== "" && v !== false && a.push(v === true ? k : `${k} ${v}`);
+  if (cmd.id === "rechunk" && p.chunking_config) a.push(p.chunking_config);
+  flag("--source", p.source); flag("--since", p.since); flag("--until", p.until); flag("--max-docs", p.max_docs);
+  flag("--limit", p.limit); if (cmd.id === "gold") flag("--chunking-config", p.chunking_config);
+  flag("-k", p.k); flag("--retrieval", p.retrieval); flag("--skip-dbt", p.skip_dbt); flag("--no-activate", p.no_activate); flag("--with-llm", p.with_llm);
+  return a.join(" ");
+}
+function readParams(card) {
+  const p = {};
+  card.querySelectorAll("[name]").forEach(el => { p[el.name] = el.type === "checkbox" ? el.checked : el.value; });
+  return p;
+}
+function renderCommands() {
+  $("#commands").innerHTML = COMMANDS.map(c => `
+    <div class="card cmd ${c.primary ? "primary" : ""}" data-cmd="${c.id}" ${c.primary ? 'style="grid-column: 1 / -1"' : ""}>
+      <div class="body"><h3>${c.title}</h3><p class="sub" style="margin-bottom:8px">${c.desc}</p>
+        <div class="row">${c.fields.map(f => F[f](c.id === "run" && f === "max_docs" ? "" : undefined)).join("")}</div>
+        <div class="cli"></div></div>
+      <div><button class="btn ${c.primary ? "" : "secondary"}" data-run="${c.id}">Run</button></div>
+    </div>`).join("");
+  document.querySelectorAll(".cmd").forEach(card => {
+    const cmd = COMMANDS.find(c => c.id === card.dataset.cmd);
+    const upd = () => { $(".cli", card).textContent = "$ " + cliFor(cmd, readParams(card)); };
+    card.addEventListener("input", upd); card.addEventListener("change", upd); upd();
+  });
+}
+$("#commands").addEventListener("click", e => {
+  const b = e.target.closest("[data-run]"); if (!b) return;
+  const card = b.closest(".cmd");
+  const p = readParams(card);
+  for (const k of Object.keys(p)) if (p[k] === "" || p[k] === false) delete p[k];
+  startJob(b.dataset.run, p);
+});
+
+let CURRENT_JOB = null, JOB_OFFSET = 0, JOB_TIMER = null;
+async function startJob(command, params) {
+  try {
+    const job = await api("/api/jobs", { method: "POST", body: JSON.stringify({ command, params }) });
+    showTab("pipeline");
+    followJob(job.id, true);
+    loadStatus();
+  } catch (e) { alert(e.message); }
+}
+function followJob(id, fresh = true) {
+  CURRENT_JOB = id; JOB_OFFSET = 0;
+  if (fresh) $("#console").textContent = "";
+  clearTimeout(JOB_TIMER); pollJob();
+}
+async function pollJob() {
+  if (!CURRENT_JOB) return;
+  let j;
+  try { j = await api(`/api/jobs/${CURRENT_JOB}?offset=${JOB_OFFSET}`); } catch { return; }
+  const con = $("#console"), atBottom = con.scrollHeight - con.scrollTop - con.clientHeight < 40;
+  if (j.log) { con.textContent += j.log; if (atBottom) con.scrollTop = con.scrollHeight; }
+  JOB_OFFSET = j.offset;
+  const cls = { running: "run", succeeded: "ok", failed: "bad", cancelled: "warn" }[j.status];
+  $("#jobstate").innerHTML = `<span class="badge ${cls}">${j.status === "running" ? '<span class="spinner" style="width:10px;height:10px"></span> ' : ""}${esc(j.status)}</span> <span class="mono muted">${esc(j.command)} · ${j.duration_s}s</span>`;
+  $("#cancelbtn").style.display = j.status === "running" ? "" : "none";
+  loadJobs();
+  if (j.status === "running") JOB_TIMER = setTimeout(pollJob, 1000);
+  else { loadStatus(); if (j.command === "eval") loadEval(); }
+}
+$("#cancelbtn").onclick = async () => { if (CURRENT_JOB) { await api(`/api/jobs/${CURRENT_JOB}/cancel`, { method: "POST" }); pollJob(); } };
+async function loadJobs() {
+  const jobs = await api("/api/jobs").catch(() => []);
+  const cls = { running: "run", succeeded: "ok", failed: "bad", cancelled: "warn" };
+  $("#jobs").innerHTML = jobs.length ? jobs.map(j => `<button data-job="${j.id}" class="${j.id === CURRENT_JOB ? "sel" : ""}">
+      <span class="badge ${cls[j.status]}">${esc(j.status)}</span><span class="mono">${esc(j.command)}</span>
+      <span class="when">${new Date(j.started * 1000).toLocaleTimeString()} · ${j.duration_s}s</span></button>`).join("") : "";
+}
+$("#jobs").onclick = e => { const b = e.target.closest("[data-job]"); if (b) followJob(b.dataset.job); };
+
+// ---------------------------------------------------------------- DATA
+function table(cols, rows, empty = "Nothing here yet.") {
+  if (!rows || !rows.length) return `<div class="empty">${empty}</div>`;
+  return `<table><thead><tr>${cols.map(c => `<th class="${c.num ? "num-cell" : ""}">${c.h}</th>`).join("")}</tr></thead><tbody>${
+    rows.map(r => `<tr>${cols.map(c => `<td class="${c.num ? "num-cell" : ""}">${c.f ? c.f(r) : esc(r[c.k])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+}
+async function loadData() {
+  await loadStatus();
+  const c = STATUS?.counts || {};
+  $("#tiles").innerHTML = [["Bronze records", c.bronze_records], ["Documents (ok)", c.documents_ok], ["Duplicates", c.duplicates],
+    ["Quarantined", c.quarantined], ["Chunks (current)", c.chunks]].map(([k, v]) => `<div class="tile"><div class="k">${k}</div><div class="v">${fmt(v)}</div></div>`).join("");
+  const [versions, val, quar] = await Promise.all([api("/api/versions").catch(() => []), api("/api/validation").catch(() => null), api("/api/quarantine").catch(() => [])]);
+  $("#versions").innerHTML = table([
+    { h: "Index version", f: r => `<span class="mono">${esc(r.index_version)}</span>` },
+    { h: "Embedding model", k: "embed_model" }, { h: "Chunks", num: true, f: r => fmt(r.n_chunks) },
+    { h: "Created", f: r => esc(String(r.created_at || "").slice(0, 16).replace("T", " ")) },
+    { h: "", f: r => r.is_active ? `<span class="badge ok">active</span>` : `<button class="link" data-activate="${esc(r.index_version)}">Activate</button>` },
+  ], versions, "No index built yet. Run the pipeline.");
+  if (val) {
+    $("#valsub").innerHTML = `Run <span class="mono">${esc(val.run_id)}</span>: <span class="badge ${val.status === "passed" ? "ok" : val.status === "warn" ? "warn" : "bad"}">${esc(val.status)}</span> · listed ${val.listed}, landed ${val.landed}, fetch errors ${val.fetch_errors}. A failed <b>error</b> check blocks the run; failed <b>warn</b> checks quarantine the affected files.`;
+    $("#validation").innerHTML = table([
+      { h: "Check", f: r => `<span class="mono">${esc(r.name)}</span>` }, { h: "Severity", k: "severity" },
+      { h: "Result", f: r => r.passed ? `<span class="badge ok">pass</span>` : `<span class="badge ${r.severity === "error" ? "bad" : "warn"}">fail</span>` },
+      { h: "Detail", k: "detail" },
+    ], val.checks);
+  } else $("#validation").innerHTML = `<div class="empty">No validation reports yet.</div>`;
+  $("#quarantine").innerHTML = table([
+    { h: "Record", f: r => r.url ? `<a href="${esc(r.url.replace("/File/document", ""))}" target="_blank" rel="noopener">${esc(r.source_id)}</a>` : esc(r.source_id) },
+    { h: "Title", f: r => esc(r.title || "") }, { h: "Stage", k: "stage" }, { h: "Reason", k: "reason" },
+  ], quar, "Nothing quarantined.");
+  loadDocs();
+}
+$("#versions").addEventListener("click", async e => {
+  const b = e.target.closest("[data-activate]"); if (!b) return;
+  if (!confirm(`Serve answers from ${b.dataset.activate}?`)) return;
+  try { await api("/api/activate", { method: "POST", body: JSON.stringify({ index_version: b.dataset.activate }) }); loadData(); }
+  catch (err) { alert(err.message); }
+});
+let DOC_T = null;
+$("#docsearch").addEventListener("input", () => { clearTimeout(DOC_T); DOC_T = setTimeout(loadDocs, 250); });
+async function loadDocs() {
+  const rows = await api("/api/documents?limit=200&q=" + encodeURIComponent($("#docsearch").value)).catch(() => []);
+  $("#documents").innerHTML = table([
+    { h: "Date", k: "date" }, { h: "Docket", f: r => r.docket ? `<button class="link" data-docket="${esc(r.docket)}" title="Ask within this docket">${esc(r.docket)}</button>` : '<span class="muted">–</span>' },
+    { h: "Title", f: r => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>` },
+    { h: "Pages", num: true, k: "n_pages" }, { h: "Tables", num: true, k: "n_tables" },
+    { h: "Status", f: r => `<span class="badge ${r.status === "ok" ? "ok" : "warn"}">${esc(r.status)}</span>` },
+  ], rows, "No documents match.");
+}
+$("#documents").addEventListener("click", e => {
+  const b = e.target.closest("[data-docket]"); if (!b) return;
+  $("#docket").value = b.dataset.docket; showTab("ask"); $("#q").focus();
+});
+
+// ---------------------------------------------------------------- EVAL
+let EVAL = null;
+async function loadEval() {
+  EVAL = await api("/api/eval").catch(() => null);
+  const ALL = ["rerank", "dense", "hybrid", "rerank_holdout", "dense_holdout", "hybrid_holdout"];
+  const modes = ALL.filter(m => EVAL && EVAL[m]);
+  if (!modes.length) { $("#evalsummary").innerHTML = `<div class="empty">No eval results yet. Run one.</div>`; $("#evalrows").innerHTML = ""; return; }
+  const label = m => m.replace("_holdout", " · held-out");
+  const sel = $("#evalmode"), cur = sel.value;
+  sel.innerHTML = modes.map(m => `<option value="${m}">${label(m)}</option>`).join("");
+  if (modes.includes(cur)) sel.value = cur;
+  const k = EVAL[modes[0]].summary.k;
+  const metrics = [["doc_hit@1", "Right filing ranked 1st", "p"], ["doc_hit@3", "Right filing in top 3", "p"],
+    [`doc_hit@${k}`, `Right filing in top ${k}`, "p"], [`answer_hit@${k}`, `Answer text in top ${k}`, "p"],
+    ["mrr", "Mean reciprocal rank", "r"], ["answer_acc", "Claude answer correct (exact phrase)", "p"],
+    ["answer_acc_judged", "Claude answer correct (judge)", "p"],
+    ["retrieval_ms_p50", "Retrieval p50", "ms"], ["retrieval_ms_p95", "Retrieval p95", "ms"]];
+  const cell = (v, t) => v == null ? '<span class="muted">not run</span>' : t === "ms" ? ms(v)
+    : `${t === "r" ? v.toFixed(3) : pct(v)}<div class="metric-bar"><span style="width:${Math.max(0, Math.min(1, v)) * 100}%"></span></div>`;
+  $("#evalsummary").innerHTML = `<table><thead><tr><th>Metric</th>${modes.map(m => `<th>${label(m)}<div class="muted mono" style="font-weight:400">${esc(EVAL[m].file)} · n=${EVAL[m].summary.n_questions}</div></th>`).join("")}</tr></thead><tbody>${
+    metrics.map(([key, label, t]) => `<tr><td>${label}</td>${modes.map(m => `<td style="min-width:140px">${cell(EVAL[m].summary[key], t)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+  renderEvalRows();
+}
+function renderEvalRows() {
+  const run = EVAL?.[$("#evalmode").value]; if (!run) { $("#evalrows").innerHTML = ""; return; }
+  $("#evalrows").innerHTML = table([
+    { h: "ID", k: "id" }, { h: "Question", f: r => `${esc(r.question)}<div class="muted" style="font-size:12px">expected: ${esc((EVAL.questions[r.id]?.answer_contains || []).join(" / "))}</div>` },
+    { h: "Rank", num: true, f: r => r.first_relevant_rank ? r.first_relevant_rank : '<span class="badge bad">miss</span>' },
+    { h: "Answer text retrieved", f: r => r["answer_hit@k"] ? '<span class="badge ok">yes</span>' : '<span class="badge warn">no</span>' },
+    { h: "Answer correct", f: r => r.judge_correct == null ? (r.answer_acc == null ? '<span class="muted">–</span>' : r.answer_acc ? '<span class="badge ok">yes</span>' : '<span class="badge bad">no</span>')
+        : `<span class="badge ${r.judge_correct ? "ok" : "bad"}" title="${esc(r.judge_reason || "")}">${r.judge_correct ? "yes" : "no"}</span>` },
+    { h: "ms", num: true, f: r => Math.round(r.retrieval_ms) },
+    { h: "", f: r => `<button class="link" data-askq="${esc(r.id)}">Ask</button>` },
+  ], run.rows);
+}
+$("#evalmode").onchange = renderEvalRows;
+$("#evalrows").addEventListener("click", e => {
+  const b = e.target.closest("[data-askq]"); if (!b) return;
+  $("#q").value = EVAL.questions[b.dataset.askq].question; $("#docket").value = ""; showTab("ask"); ask();
+});
+document.querySelectorAll("[data-eval]").forEach(b => b.onclick = () => startJob("eval", { retrieval: b.dataset.eval }));
+
+// ---------------------------------------------------------------- boot
+(async () => {
+  CHUNK_CONFIGS = await api("/api/chunking-configs").catch(() => []);
+  renderCommands();
+  await loadStatus();
+  loadJobs();
+  const h = location.hash.slice(1);
+  if (["ask", "pipeline", "data", "eval"].includes(h)) showTab(h);
+  // Shareable demo links: /?q=<question> asks it on load.
+  const q = new URLSearchParams(location.search).get("q");
+  if (q) { $("#q").value = q; showTab("ask"); ask(); }
+  setInterval(loadStatus, 10000);
+})();
+</script>
+</body>
+</html>

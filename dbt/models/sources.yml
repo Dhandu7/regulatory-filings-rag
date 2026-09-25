@@ -1,0 +1,33 @@
+version: 2
+
+# Locally (DuckDB) each source is the Parquet lake table written by the Python pipeline, via
+# dbt-duckdb's `external_location` (a DuckDB-only setting that dbt-databricks ignores). On Databricks
+# the same names resolve to Delta tables in <catalog>.regrag written by the Spark silver job.
+sources:
+  - name: lake
+    # Databricks: the Spark silver job's Delta tables in <catalog>.regrag. Locally, database/schema are
+    # ignored because every table has an external_location.
+    database: "{{ target.database }}"
+    schema: regrag
+    description: Bronze + silver tables of the regulatory filings lake.
+    freshness:
+      warn_after: {count: 2, period: day}
+      error_after: {count: 7, period: day}
+    tables:
+      - name: bronze_manifest
+        description: One row per regulator record landed in object storage (raw bytes + hash).
+        meta:
+          external_location: "read_parquet('{{ env_var('REGRAG_LAKE_ROOT', '../data/lake') }}/bronze/manifest/*.parquet', union_by_name=true)"
+        loaded_at_field: "cast(fetched_at as timestamp)"
+      - name: silver_documents
+        meta:
+          external_location: "read_parquet('{{ env_var('REGRAG_LAKE_ROOT', '../data/lake') }}/silver/documents/*.parquet', union_by_name=true)"
+        loaded_at_field: "cast(parsed_at as timestamp)"
+      - name: silver_chunks
+        meta:
+          external_location: "read_parquet('{{ env_var('REGRAG_LAKE_ROOT', '../data/lake') }}/silver/chunks/*/*.parquet', union_by_name=true, hive_partitioning=true)"
+        loaded_at_field: "cast(chunked_at as timestamp)"
+      - name: silver_quarantine
+        meta:
+          external_location: "read_parquet('{{ env_var('REGRAG_LAKE_ROOT', '../data/lake') }}/silver/quarantine/*.parquet', union_by_name=true)"
+        freshness: null

@@ -1,0 +1,1851 @@
+{
+  "summary": {
+    "n_questions": 30,
+    "k": 6,
+    "hybrid": true,
+    "index_version": "v1-d4fd9d711f72__bge_small_en_v1_5",
+    "doc_hit@1": 0.7,
+    "doc_hit@3": 0.9333333333333333,
+    "doc_hit@6": 0.9333333333333333,
+    "answer_hit@6": 0.8,
+    "mrr": 0.7944444444444444,
+    "retrieval_ms_p50": 67.91549999616109,
+    "retrieval_ms_p95": 124.09470800776035,
+    "total_ms_p50": 69.17549998615868,
+    "total_ms_p95": 125.52508301450871,
+    "retrieval_ms_mean": 69.49409586765493,
+    "answer_acc": null
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "question": "Under which section of the OEB Act did Vitol Inc. apply to renew its electricity wholesaler licence?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 67.91549999616109,
+      "total_ms": 69.17549998615868,
+      "retrieved": [
+        [
+          "934360",
+          "EB-2026-0015",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          "955711",
+          "EB-2026-0184",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "919784",
+          "EB-2025-0258",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "935023",
+          "EB-2025-0330",
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "For how long a term did the OEB decide to issue Chosen Energy Limited's electricity retailer licence after its appeal?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 75.46033299877308,
+      "total_ms": 76.73633299418725,
+      "retrieved": [
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            9,
+            10
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            14,
+            14
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "How much was the School Energy Coalition awarded in costs in the GrandBridge Energy non-wires solutions proceeding?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 67.18725000973791,
+      "total_ms": 68.34779199562036,
+      "retrieved": [
+        [
+          "954688",
+          "EB-2025-0265",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "954375",
+          "EB-2024-0129",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954688",
+          "EB-2025-0265",
+          [
+            2,
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "How long is the transmission line Hydro One wants to build in the City of Ottawa to supply the Orl\u00e9ans community?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 101.86845800490119,
+      "total_ms": 103.11608298798092,
+      "retrieved": [
+        [
+          "955586",
+          "EB-2026-0018",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            51,
+            51
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            12,
+            13
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "What information did the OEB agree to treat as confidential in Hydro One's response to OEB staff interrogatory 6(d) for the Ottawa transmission line?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 137.69866598886438,
+      "total_ms": 139.0143329917919,
+      "retrieved": [
+        [
+          "955559",
+          "EB-2026-0128",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955586",
+          "EB-2026-0018",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "939629",
+          "EB-2025-0290",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "939629",
+          "EB-2025-0290",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955551",
+          "EB-2026-0154",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "939629",
+          "EB-2025-0290",
+          [
+            2,
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "Under which section of the OEB Act did the OEB start its review of the natural gas Model Franchise Agreement?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 63.973667012760416,
+      "total_ms": 65.21554198116064,
+      "retrieved": [
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            17,
+            18
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            10,
+            11
+          ]
+        ],
+        [
+          "956389",
+          "EB-2025-0315",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            27,
+            28
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            15,
+            15
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "How much funding did the OEB order reallocated to Limited Electrification Measures in Enbridge's Southern Lake Huron IRP pilot?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 68.91716699465178,
+      "total_ms": 70.12550000217743,
+      "retrieved": [
+        [
+          "936974",
+          "EB-2025-0333",
+          [
+            12,
+            12
+          ]
+        ],
+        [
+          "954566",
+          "EB-2025-0064",
+          [
+            7,
+            8
+          ]
+        ],
+        [
+          "936974",
+          "EB-2025-0333",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "936974",
+          "EB-2025-0333",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956426",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955890",
+          "EB-2025-0295",
+          [
+            3,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "Where is the generation facility owned by Stelco Inc. located?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 42.222582997055724,
+      "total_ms": 43.42208302114159,
+      "retrieved": [
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            34,
+            35
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            41,
+            41
+          ]
+        ],
+        [
+          "943093",
+          "EB-2026-0110",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            76,
+            77
+          ]
+        ],
+        [
+          "956108",
+          null,
+          [
+            140,
+            140
+          ]
+        ],
+        [
+          "956040",
+          "EB-2026-0033",
+          [
+            5,
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "What type of licence was Passer Digital Inc. granted?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 39.22458301531151,
+      "total_ms": 40.336042002309114,
+      "retrieved": [
+        [
+          "955711",
+          "EB-2026-0184",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955712",
+          null,
+          [
+            6,
+            7
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "How long is the 230kV line in Hydro One's Durham Kawartha Power Line Project?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": false,
+      "retrieval_ms": 70.7774999900721,
+      "total_ms": 72.00449999072589,
+      "retrieved": [
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956180",
+          "EB-2026-0155",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            51,
+            52
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            50,
+            51
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "What is the monthly total bill impact for a typical Lakeland Power residential customer from its 2026 final rate order?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 120.72450001141988,
+      "total_ms": 121.92770899855532,
+      "retrieved": [
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            9,
+            10
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            12,
+            12
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            16,
+            16
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            13,
+            14
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "How much did the OEB approve for recovery for Lakeland Power's ice storm Z-factor event?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 37.83645899966359,
+      "total_ms": 39.016833005007356,
+      "retrieved": [
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            15,
+            15
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            9,
+            9
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "What does the generic Non-Wires Solutions Variance Account record?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 31.5942500019446,
+      "total_ms": 33.134874975075945,
+      "retrieved": [
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            11,
+            12
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            13,
+            14
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954610",
+          "EB-2026-0196",
+          [
+            14,
+            14
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "Until what date did Enbridge Gas ask to extend its approved 2026 DSM activities?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 61.413457995513454,
+      "total_ms": 62.83183299819939,
+      "retrieved": [
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "956596",
+          "EB-2025-0295",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "By what date does the OEB aim to issue its decision on Enbridge Gas's DSM extension request?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 53.199625021079555,
+      "total_ms": 54.6219999960158,
+      "retrieved": [
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "954385",
+          "EB-2025-0295",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "956596",
+          "EB-2025-0295",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q16",
+      "question": "When does the extended abeyance of Enbridge Gas's Lanark and Balderson Community Expansion Project application end?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": false,
+      "retrieval_ms": 103.9973330043722,
+      "total_ms": 105.5007920076605,
+      "retrieved": [
+        [
+          "956707",
+          "EB-2025-0306",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955465",
+          "EB-2026-0223",
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            26,
+            26
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            17,
+            18
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            26,
+            27
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            25,
+            25
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q17",
+      "question": "What recommendations is the OEB's Regional Planning Reform Implementation initiative meant to implement?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 46.82070898707025,
+      "total_ms": 48.45324999769218,
+      "retrieved": [
+        [
+          "955226",
+          null,
+          [
+            18,
+            19
+          ]
+        ],
+        [
+          "955991",
+          "EB-2026-0245",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            24,
+            25
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            16,
+            17
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            7,
+            7
+          ]
+        ],
+        [
+          "955226",
+          null,
+          [
+            26,
+            27
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q18",
+      "question": "When did the Ontario Regulation 633/21 Green Button requirements for distributors come into effect?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 71.92025001859292,
+      "total_ms": 73.3491670107469,
+      "retrieved": [
+        [
+          "954660",
+          "EB-2026-0230",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954660",
+          "EB-2026-0230",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955400",
+          null,
+          [
+            40,
+            40
+          ]
+        ],
+        [
+          "954328",
+          null,
+          [
+            39,
+            39
+          ]
+        ],
+        [
+          "954323",
+          null,
+          [
+            85,
+            86
+          ]
+        ],
+        [
+          "954660",
+          "EB-2026-0230",
+          [
+            2,
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q19",
+      "question": "On what date will the OEB iSearch platform be retired?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.921791994012892,
+      "total_ms": 19.165000005159527,
+      "retrieved": [
+        [
+          "956571",
+          null,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956571",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956116",
+          null,
+          [
+            21,
+            23
+          ]
+        ],
+        [
+          "954040",
+          "EB-2026-0066",
+          [
+            44,
+            44
+          ]
+        ],
+        [
+          "954321",
+          null,
+          [
+            132,
+            132
+          ]
+        ],
+        [
+          "945220",
+          null,
+          [
+            38,
+            38
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q20",
+      "question": "How often will distributors refresh Centralized Capacity Information Map (CCIM) capacity data?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 48.13933401601389,
+      "total_ms": 49.464916985016316,
+      "retrieved": [
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955137",
+          "EB-2019-0207",
+          [
+            3,
+            5
+          ]
+        ],
+        [
+          "954866",
+          "EB-2026-0029",
+          [
+            335,
+            335
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q21",
+      "question": "What 2027 revenue requirement did the IESO propose in its application for 2026 to 2028 fees?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 105.35112497746013,
+      "total_ms": 106.88791700522415,
+      "retrieved": [
+        [
+          "954012",
+          "EB-2026-0142",
+          [
+            7,
+            7
+          ]
+        ],
+        [
+          "954800",
+          "EB-2026-0142",
+          [
+            6,
+            7
+          ]
+        ],
+        [
+          "954012",
+          "EB-2026-0142",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954800",
+          "EB-2026-0142",
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          "954012",
+          "EB-2026-0142",
+          [
+            14,
+            15
+          ]
+        ],
+        [
+          "954012",
+          "EB-2026-0142",
+          [
+            13,
+            14
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q22",
+      "question": "When is the virtual kick-off meeting for Hydro One's 2027 Custom IR Annual Update application?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 124.09470800776035,
+      "total_ms": 125.52508301450871,
+      "retrieved": [
+        [
+          "954732",
+          "EB-2026-0049",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955119",
+          "EB-2026-0049",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955239",
+          "EB-2026-0169",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "935202",
+          "EB-2024-0155",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954323",
+          null,
+          [
+            174,
+            175
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q23",
+      "question": "Which party was approved as an intervenor in the Waasigan Transmission Line Partnership 2027 transmission rates case?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": false,
+      "retrieval_ms": 85.51787500618957,
+      "total_ms": 86.79687499534339,
+      "retrieved": [
+        [
+          "954044",
+          "EB-2026-0066",
+          [
+            48,
+            48
+          ]
+        ],
+        [
+          "938226",
+          "EB-2025-0033",
+          [
+            8,
+            8
+          ]
+        ],
+        [
+          "956258",
+          null,
+          [
+            27,
+            28
+          ]
+        ],
+        [
+          "955959",
+          "EB-2026-0078",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954044",
+          "EB-2026-0066",
+          [
+            61,
+            61
+          ]
+        ],
+        [
+          "955449",
+          "EB-2025-0252",
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q24",
+      "question": "Why did the OEB cancel the settlement conference in Enbridge Gas's 2027 rates proceeding?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 64.1410420066677,
+      "total_ms": 65.43320798664354,
+      "retrieved": [
+        [
+          "956228",
+          "EB-2026-0157",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954815",
+          "EB-2026-0157",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "954815",
+          "EB-2026-0157",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954857",
+          "EB-2026-0157",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955764",
+          "EB-2025-0295",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955303",
+          "EB-2026-0225",
+          [
+            14,
+            15
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q25",
+      "question": "Until when was National Research Council Canada's electricity wholesaler licence extended on an interim basis?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 43.03225001785904,
+      "total_ms": 44.171957997605205,
+      "retrieved": [
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "956568",
+          "EB-2026-0197",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "919784",
+          "EB-2025-0258",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            348,
+            354
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q26",
+      "question": "What is Workstream 3 in the OEB's Distribution System Operator (DSO) Roadmap?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 68.8859169895295,
+      "total_ms": 70.13770801131614,
+      "retrieved": [
+        [
+          "954304",
+          null,
+          [
+            20,
+            21
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            16,
+            17
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            18,
+            18
+          ]
+        ],
+        [
+          "954309",
+          null,
+          [
+            277,
+            277
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "954309",
+          null,
+          [
+            276,
+            276
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q27",
+      "question": "Did the OEB grant the Ross Firm Group intervenor status in Hydro One's St. Thomas expropriation proceeding?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 72.4381249747239,
+      "total_ms": 73.75904099899344,
+      "retrieved": [
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            7,
+            8
+          ]
+        ],
+        [
+          "955892",
+          "EB-2026-0083",
+          [
+            7,
+            7
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q28",
+      "question": "How did the OEB allow interrogatories to be organized in the Lakefront Utilities 2027 rates proceeding?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 71.39674999052659,
+      "total_ms": 73.13558299210854,
+      "retrieved": [
+        [
+          "954724",
+          "EB-2026-0054",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954724",
+          "EB-2026-0054",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954008",
+          "EB-2026-0054",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956108",
+          null,
+          [
+            140,
+            140
+          ]
+        ],
+        [
+          "955056",
+          "EB-2026-0221",
+          [
+            230,
+            230
+          ]
+        ],
+        [
+          "956108",
+          null,
+          [
+            128,
+            129
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q29",
+      "question": "By what date must distributors that missed the deadline respond to the OEB's OESP billing practices letter?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 45.77183400397189,
+      "total_ms": 47.10900000645779,
+      "retrieved": [
+        [
+          "956769",
+          null,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956117",
+          null,
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "945220",
+          null,
+          [
+            43,
+            44
+          ]
+        ],
+        [
+          "956228",
+          "EB-2026-0157",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "945220",
+          null,
+          [
+            39,
+            39
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "q30",
+      "question": "When did the OEB start its consultation on the regulatory treatment of Stream 2 local eDSM programs?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 75.3798329969868,
+      "total_ms": 76.53666700934991,
+      "retrieved": [
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955397",
+          null,
+          [
+            325,
+            325
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954321",
+          null,
+          [
+            325,
+            325
+          ]
+        ],
+        [
+          "955026",
+          "EB-2025-0156",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955397",
+          null,
+          [
+            325,
+            325
+          ]
+        ]
+      ]
+    }
+  ]
+}

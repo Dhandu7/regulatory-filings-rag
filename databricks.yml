@@ -1,0 +1,102 @@
+# Databricks Asset Bundle: the medallion pipeline as a scheduled Databricks Workflow, plus the demo
+# console as a Databricks App. Setup and first-run steps: databricks/README.md.
+#
+#   databricks bundle validate
+#   databricks bundle deploy -t dev
+#   databricks bundle run regrag_daily -t dev      # one pipeline run now
+#   databricks bundle run regrag_console -t dev    # start the app
+#
+# Deploying syncs this repository (minus .gitignore'd data, .venv, .pgdata) to the workspace, so the
+# tasks read configs/ and dbt/ from ${workspace.file_path}; the regrag wheel provides the code.
+bundle:
+  name: regrag
+
+variables:
+  catalog:
+    description: Unity Catalog catalog that holds the regrag schema and lake volume
+    default: workspace
+  warehouse_id:
+    description: SQL warehouse the dbt task runs on (Free Edition includes a serverless starter warehouse)
+
+artifacts:
+  regrag_wheel:
+    type: whl
+    path: .
+    build: python3 -m pip wheel --no-deps --wheel-dir dist .
+
+resources:
+  jobs:
+    regrag_daily:
+      name: regrag-daily-incremental
+      schedule:
+        quartz_cron_expression: "0 0 6 * * ?"
+        timezone_id: America/Toronto
+      max_concurrent_runs: 1
+      environments:
+        - environment_key: regrag
+          spec:
+            client: "2"
+            dependencies:
+              - ./dist/*.whl
+        - environment_key: dbt
+          spec:
+            client: "2"
+            dependencies:
+              - dbt-databricks>=1.8,<2.0
+      tasks:
+        # 1. Bronze: pull new OEB filings to the volume and validate. A failed validation exits non-zero,
+        #    which stops every downstream task (the watermark is not advanced, so the next run retries).
+        - task_key: bronze_ingest
+          environment_key: regrag
+          python_wheel_task:
+            package_name: regrag
+            entry_point: regrag-job
+            parameters: ["--config", "${workspace.file_path}/configs/pipeline.databricks.yaml",
+                         "ingest", "--source", "oeb"]
+
+        # 2. Silver on Spark: parse, dedup, quarantine, chunk -> Delta tables in ${var.catalog}.regrag.
+        - task_key: silver_spark
+          depends_on: [{task_key: bronze_ingest}]
+          environment_key: regrag
+          spark_python_task:
+            python_file: ./databricks/src/silver_spark.py
+            parameters: ["--catalog", "${var.catalog}",
+                         "--config", "${workspace.file_path}/configs/pipeline.databricks.yaml"]
+
+        # 3. dbt gate: schema, relationship and data-quality tests plus source freshness on the Delta tables.
+        - task_key: dbt_tests
+          depends_on: [{task_key: silver_spark}]
+          environment_key: dbt
+          dbt_task:
+            project_directory: ./dbt
+            warehouse_id: ${var.warehouse_id}
+            catalog: ${var.catalog}
+            schema: regrag
+            commands: ["dbt build", "dbt source freshness"]
+
+        # 4. Gold: embed new chunks into pgvector (hosted Postgres) and activate the index version.
+        - task_key: gold_index
+          depends_on: [{task_key: dbt_tests}]
+          environment_key: regrag
+          python_wheel_task:
+            package_name: regrag
+            entry_point: regrag-job
+            parameters: ["--config", "${workspace.file_path}/configs/pipeline.databricks.yaml", "gold"]
+
+  apps:
+    regrag_console:
+      name: regrag-console
+      description: Ask the regulatory filings index; pipeline runs are handled by the regrag-daily-incremental job.
+      source_code_path: .
+      resources:
+        - name: database-url
+          secret: {scope: regrag, key: database-url, permission: READ}
+        - name: anthropic-api-key
+          secret: {scope: regrag, key: anthropic-api-key, permission: READ}
+
+targets:
+  dev:
+    mode: development      # resources are prefixed with your user name and schedules are paused
+    default: true
+  prod:
+    mode: production       # schedule active; deploy from CI or with a service principal

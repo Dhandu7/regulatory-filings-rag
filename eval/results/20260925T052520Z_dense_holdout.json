@@ -1,0 +1,1617 @@
+{
+  "summary": {
+    "n_questions": 22,
+    "question_set": "holdout",
+    "k": 6,
+    "retrieval": "dense",
+    "expand_window": 0,
+    "hybrid": false,
+    "index_version": "v1-d4fd9d711f72__bge_small_en_v1_5",
+    "doc_hit@1": 0.5454545454545454,
+    "doc_hit@3": 0.8181818181818182,
+    "doc_hit@6": 0.8636363636363636,
+    "answer_hit@6": 0.9090909090909091,
+    "mrr": 0.6704545454545454,
+    "retrieval_ms_p50": 17.79170800000429,
+    "retrieval_ms_p95": 27.731167007004842,
+    "total_ms_p50": 3179.1807079862338,
+    "total_ms_p95": 6396.844540984603,
+    "retrieval_ms_mean": 18.868562547140755,
+    "answer_acc": 0.9090909090909091,
+    "cited_expected_rate": 0.8636363636363636,
+    "answer_acc_judged": 0.8636363636363636,
+    "judge_graded": 22,
+    "prompt_cache": {
+      "read_tokens": 30250,
+      "write_tokens": 0,
+      "uncached_input_tokens": 69945,
+      "hit_ratio": 0.30191127301761567
+    }
+  },
+  "rows": [
+    {
+      "id": "h01",
+      "question": "When did the OEB begin its review of requirements for distributors connecting Distributed Energy Resources?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 7.990999991307035,
+      "total_ms": 2728.934750019107,
+      "retrieved": [
+        [
+          "954304",
+          null,
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954318",
+          "EB-2026-0056",
+          [
+            44,
+            45
+          ]
+        ],
+        [
+          "955869",
+          "EB-2019-0207",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "955869",
+          "EB-2019-0207",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "954304",
+          null,
+          [
+            8,
+            8
+          ]
+        ]
+      ],
+      "answer": "The OEB commenced the Distributed Energy Resources Connections Review by letter issued on **August 13, 2019**, initiating a review of its requirements relating to the connection of DERs by licensed electricity distributors (EB-2019-0207) [3]. The letter also indicated that cost awards would be available under section 30 of the OEB Act, with licensed, rate-regulated electricity distributors paying the costs [3]. Stakeholder representatives have participated in the initiative through a Working Group since its inception [3].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3632,
+        "output_tokens": 190,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states August 13, 2019, matching the reference."
+    },
+    {
+      "id": "h02",
+      "question": "When did Discovery Kidd Creek Inc. file a complete application for an electricity wholesaler licence?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 11.526208982104436,
+      "total_ms": 1944.702332984889,
+      "retrieved": [
+        [
+          "956568",
+          "EB-2026-0197",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956569",
+          null,
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954161",
+          "EB-2026-0242",
+          [
+            2,
+            3
+          ]
+        ]
+      ],
+      "answer": "Discovery Kidd Creek Inc. filed a complete application with the OEB on July 14, 2026, under section 60 of the *Ontario Energy Board Act, 1998*, for an electricity wholesaler licence [1]. The Delegated Authority granted the application and issued licence EW-2026-0197 on September 22, 2026 [1][4].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 1835,
+        "output_tokens": 118,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the filing date as July 14, 2026, matching the reference."
+    },
+    {
+      "id": "h03",
+      "question": "What was the date of the OEB's acknowledgment letter for London Hydro's 2027 Cost of Service application?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 27.731167007004842,
+      "total_ms": 3010.564833006356,
+      "retrieved": [
+        [
+          "956450",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955441",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956411",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            390,
+            392
+          ]
+        ],
+        [
+          "954327",
+          null,
+          [
+            28,
+            28
+          ]
+        ],
+        [
+          "954329",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "answer": "The acknowledgement letter itself is dated **September 1, 2026**, acknowledging receipt of London Hydro Inc.'s 2027 Cost of Service Application dated August 28, 2026 and assigning File Number EB-2026-0056 [1].\n\nNote a discrepancy in the record: the OEB's subsequent completeness letter of September 11, 2026 refers to \"the Ontario Energy Board's (OEB) acknowledgment letter dated September 2, 2026\" [2]. The letter as filed bears the September 1, 2026 date [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3575,
+        "output_tokens": 253,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": false,
+      "judge_reason": "The answer's primary assertion is that the acknowledgment letter is dated September 1, 2026, contradicting the reference fact of September 2, 2026; it only mentions September 2 as a discrepancy it dismisses."
+    },
+    {
+      "id": "h04",
+      "question": "What was the date of the OEB's acknowledgment letter for Toronto Hydro's 2027 distribution rates application?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 21.84491601656191,
+      "total_ms": 1939.7925000230316,
+      "retrieved": [
+        [
+          "953972",
+          "EB-2026-0073",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954929",
+          "EB-2026-0073",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954930",
+          "EB-2026-0073",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955596",
+          "EB-2026-0051",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955332",
+          "EB-2026-0073",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956450",
+          "EB-2026-0056",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "answer": "The OEB's acknowledgment letter for Toronto Hydro-Electric System Limited's 2027 distribution rates application (EB-2026-0073) was dated August 18, 2026, as referenced in the OEB's completeness letter of August 28, 2026 [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3875,
+        "output_tokens": 91,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states August 18, 2026, matching the reference date."
+    },
+    {
+      "id": "h05",
+      "question": "Which Indigenous organization applied late and was found eligible for cost awards in the Gas-Electric Co-ordination and Information Sharing consultation?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 23.47933399141766,
+      "total_ms": 2936.950915987836,
+      "retrieved": [
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "955340",
+          "EB-2025-0227",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955016",
+          "EB-2026-0152",
+          [
+            90,
+            91
+          ]
+        ],
+        [
+          "955016",
+          "EB-2026-0152",
+          [
+            89,
+            89
+          ]
+        ]
+      ],
+      "answer": "The **M\u00e9tis Nation of Ontario (MNO)** registered to participate and applied for cost award eligibility on August 12, 2026, after the OEB's January 20, 2026 Decision on Cost Eligibility letter in the Gas-Electric Co-ordination and Information Sharing consultation (EB-2025-0227) [1]. The OEB found that MNO (along with the Ontario Energy Collaborative Association) is eligible to apply for an award of costs on a go-forward basis under the Practice Direction on Cost Awards [4]. The late requests were posted for objections from rate-regulated electricity and natural gas utilities, and no objections were received [1].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3240,
+        "output_tokens": 249,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer identifies the M\u00e9tis Nation of Ontario as the late applicant found eligible for cost awards, matching the reference fact."
+    },
+    {
+      "id": "h06",
+      "question": "What did the OEB decide on Chosen Energy Limited's January 2026 application for an electricity retailer licence?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 15.780374989844859,
+      "total_ms": 5882.172250014264,
+      "retrieved": [
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "955978",
+          "EB-2026-0162",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "939572",
+          "EB-2026-0022",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "answer": "The OEB denied the application. Chosen Energy Limited filed on January 20, 2026 under section 60 of the OEB Act for an electricity retailer licence authorizing it to sell or offer to sell electricity to both low volume and large volume consumers in Ontario [1]. The Decision and Order was issued April 23, 2026 by Delegated Authority (Kevin Mancherjee, Vice President, Electricity Networks) without a hearing pursuant to section 6 of the OEB Act, and denied the application [1][6].\n\nThe Delegated Authority found that Chosen Energy \"has not met all requirements prescribed by section 2(1) of O. Reg. 90/99,\" so the low volume licence was denied pursuant to section 2(2) of O. Reg. 90/99; the large volume portion was \"likewise denied\" after considering the applicant's financial position and its qualifications and experience in conducting the licensable activities and managing the related technical and financial matters [2].\n\nThis was Chosen Energy's second application, the first having been filed in June 2025 and denied in November 2025, also under Delegated Authority [5]. Chosen Energy appealed on May 8, 2026 (EB-2026-0162), seeking reversal, remittal for reconsideration, or a determination that it may re-apply [2][3]; OEB staff opposed the appeal [4]. The retrieved sources do not state the outcome of that appeal.",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3065,
+        "output_tokens": 530,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the OEB denied the application, matching the reference fact."
+    },
+    {
+      "id": "h07",
+      "question": "Until when were E.L.K. Energy and ENWIN temporarily exempted from section 2.1.2 of the Affiliate Relationships Code?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 21.56420800019987,
+      "total_ms": 4784.442875010427,
+      "retrieved": [
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "939383",
+          "EB-2026-0089",
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "answer": "The OEB granted both utilities the exemption until the earlier of December 31, 2028 and the closing of E.L.K.'s amalgamation with ENWIN [4].\n\nThe licence amendments state the exemption \"expires on December 31, 2028 or on the date of closing\" of the amalgamation, \"whichever is earlier\" \u2014 added to Schedule 3, \"List of Code Exemptions,\" of E.L.K.'s Electricity Distribution Licence ED-2003-0015 [4] and of ENWIN's licence ED-2002-0527 [1]. This matches the relief the applicants sought in their combined application filed February 5, 2026 under section 74 of the OEB Act [3][5]. The decision was issued under delegated authority without a hearing pursuant to section 6(4) of the OEB Act by Ceiran Bishop, Director, Performance Analytics and Compliance, dated April 22, 2026 [2][1]. The OEB noted that if the amalgamation does not proceed on its expected schedule the exemption will expire, and that after amalgamation the remaining utility would be required to meet the ARC's independent director requirements; both utilities must continue to comply with all other ARC requirements and their licence conditions [4].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2792,
+        "output_tokens": 432,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the exemption runs until December 31, 2028 (or earlier closing of amalgamation), matching the reference fact."
+    },
+    {
+      "id": "h08",
+      "question": "For what term did the OEB approve renewing Enbridge Gas's franchise agreement with the Regional Municipality of York?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 21.751292020780966,
+      "total_ms": 3179.1807079862338,
+      "retrieved": [
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            6,
+            7
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          "940011",
+          "EB-2026-0020",
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "answer": "The OEB approved the renewal of Enbridge Gas Inc.'s natural gas franchise agreement with the Regional Municipality of York for a **twenty-year term** [2]. The approved agreement is in the form of the 2000 Model Franchise Agreement with no amendments, and the Regional Municipality of York approved the form of the draft by-law and franchise agreement [4]. The decision was made by delegated authority (Theodore Antonopoulos, Vice President, Natural Gas & Energy Integration) on April 28, 2026 [6], after the OEB found approval to be in the public interest and noted that no party intervened or objected [4].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2633,
+        "output_tokens": 250,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states a twenty-year term, matching the reference."
+    },
+    {
+      "id": "h09",
+      "question": "How long is the transmission line in Hydro One's Welland-Thorold Project?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": true,
+      "retrieval_ms": 19.46545799728483,
+      "total_ms": 3290.1885409955867,
+      "retrieved": [
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            15,
+            15
+          ]
+        ],
+        [
+          "954650",
+          "EB-2025-0290",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            22,
+            22
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "answer": "Approximately 18.5 kilometres of new transmission line between Abitibi Consolidated Junction and Crowland Transformer Station in the Niagara area [2][5]. This comprises about 10.5 km of new 230 kV double-circuit transmission line and 8 km of new triple-circuit line (two 230 kV circuits and a single 115 kV circuit) [4].\n\nThe line uses both new and repurposed right-of-way: the new 230 kV ROW runs from Abitibi Consolidated Junction to Allanburg TS, while the repurposed section spans Allanburg TS to Crowland TS [4]. In addition to the line work, station expansion is required at Crowland TS, along with protection, control and telecommunications modifications at three remote stations [5].",
+      "answer_acc": true,
+      "cited_expected": false,
+      "usage": {
+        "input_tokens": 3467,
+        "output_tokens": 293,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states approximately 18.5 kilometres, matching the reference fact."
+    },
+    {
+      "id": "h10",
+      "question": "Which party was granted cost eligibility in the consultation reviewing EPCOR's 2026 natural gas supply plan updates?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 18.961291993036866,
+      "total_ms": 3531.6957909963094,
+      "retrieved": [
+        [
+          "944509",
+          "EB-2026-0086",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "944509",
+          "EB-2026-0086",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "944509",
+          "EB-2026-0086",
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          "956232",
+          null,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956924",
+          "EB-2026-0149",
+          [
+            64,
+            67
+          ]
+        ],
+        [
+          "956924",
+          "EB-2026-0149",
+          [
+            63,
+            64
+          ]
+        ]
+      ],
+      "answer": "Pollution Probe was the only party that requested to participate in the EB-2026-0086 consultation reviewing EPCOR Natural Gas Limited Partnership's Aylmer and Southern Bruce 2026 annual gas supply plan updates, and it sought approval for cost eligibility [2]. The decision, issued by delegated authority under section 6 of the *Ontario Energy Board Act, 1998* by Theodore Antonopoulos, Vice President, Natural Gas & Energy Integration [1][2], sets out total eligible hours per participant: up to 7 hours for review of the GSP and submission of written questions, and up to 4 hours for review of responses and written comments on the GSP [3].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3041,
+        "output_tokens": 323,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer identifies Pollution Probe as the party granted cost eligibility, matching the reference."
+    },
+    {
+      "id": "h11",
+      "question": "How long is the transmission line in Hydro One's Northeast Power Line Project?",
+      "first_relevant_rank": 4,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 16.57425001030788,
+      "total_ms": 3299.151332990732,
+      "retrieved": [
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            13,
+            14
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955551",
+          "EB-2026-0154",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            6,
+            6
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "answer": "Approximately **205 km**. Hydro One's application, filed May 19, 2026 under sections 92 and 97 of the OEB Act, seeks leave to construct roughly 205 km of 500 kV single-circuit transmission line between Hanmer Transformer Station in Greater Sudbury and Mississagi TS near Wharncliffe in the District of Algoma, along with associated terminal station work (expansion of Hanmer TS and new 500 kV facilities at Mississagi TS) [6][4].\n\nThe line would be sited within Hydro One's existing transmission corridor alongside the existing X74P 230 kV line; the corridor is about 140 m wide and the Project would occupy about 70 m of it [5]. Of the route, approximately 32.2% is on private lands and 67.7% on public lands [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3618,
+        "output_tokens": 308,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states approximately 205 km, matching the reference fact."
+    },
+    {
+      "id": "h12",
+      "question": "Which transformer stations will Hydro One's roughly 117-kilometre southwestern Ontario transmission line connect?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": false,
+      "retrieval_ms": 17.80541701009497,
+      "total_ms": 4670.73858299409,
+      "retrieved": [
+        [
+          "954389",
+          "EB-2026-0155",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            12,
+            13
+          ]
+        ],
+        [
+          "954033",
+          "EB-2025-0290",
+          [
+            81,
+            81
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "answer": "The retrieved filings do not describe a roughly 117-kilometre Hydro One transmission line in southwestern Ontario. The transmission line projects in these sources are: an approximately 205 km 500 kV single-circuit line between Hanmer TS in Greater Sudbury and Mississagi TS near Wharncliffe in the District of Algoma (EB-2026-0154) [3]; an approximately 21 km 115 kV relocation of the D6 line in Renfrew County, between Chalk River CTS and Petawawa Junction, on the line connecting Des Joachims TS with Pembroke TS (EB-2026-0112 / related argument in chief) [2][6]; an approximately 18.5 km 230 kV double-circuit line between Abitibi Consolidated Junction and Crowland TS in the Niagara area (EB-2025-0290) [4]; and a proposed new line from Dobbin TS to Clarington TS in Eastern Ontario (EB-2026-0155), for which no length is given in the source [1].",
+      "answer_acc": false,
+      "cited_expected": false,
+      "usage": {
+        "input_tokens": 3113,
+        "output_tokens": 401,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": false,
+      "judge_reason": "The answer states the information is not in the sources and does not mention Longwood TS, contradicting the reference fact."
+    },
+    {
+      "id": "h13",
+      "question": "By when may OEB staff submit interrogatories on Wataynikaneyap Power's EPC COVID-related deferral account application?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 20.94095799839124,
+      "total_ms": 4544.009792007273,
+      "retrieved": [
+        [
+          "956225",
+          "EB-2026-0180",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "956225",
+          "EB-2026-0180",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "945174",
+          "EB-2026-0009",
+          [
+            22,
+            22
+          ]
+        ]
+      ],
+      "answer": "OEB staff could file interrogatories on the EPC COVID\u2011Related Costs Deferral Account disposition application by **September 18, 2026**, as set out in Procedural Order No. 3 in the consolidated proceeding [3][4]. Staff met that date, filing its interrogatories on September 18, 2026 [2].\n\nNote a discrepancy in Procedural Order No. 3 on the response date: the body of the order states responses are due September 28, 2026 [3][5], while the ordering paragraph requires Wataynikaneyap Power to file complete written responses by September 29, 2026 [4]. OEB staff's covering letter states responses are due by September 29, 2026 [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3007,
+        "output_tokens": 304,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states September 18, 2026, matching the reference."
+    },
+    {
+      "id": "h14",
+      "question": "When did Enbridge Gas file its application to dispose of 2025 deferral and variance account balances?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 23.52512499783188,
+      "total_ms": 4681.493666983442,
+      "retrieved": [
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            10,
+            11
+          ]
+        ],
+        [
+          "955934",
+          "EB-2026-0108",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            26,
+            26
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            25,
+            25
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            14,
+            14
+          ]
+        ],
+        [
+          "954526",
+          "EB-2026-0108",
+          [
+            26,
+            27
+          ]
+        ]
+      ],
+      "answer": "Enbridge Gas Inc. filed the application with the OEB on **July 30, 2026**, under section 36 of the *Ontario Energy Board Act, 1998*, seeking approval for the disposition of balances in certain deferral and variance accounts [2][3]. On August 24, 2026, Enbridge Gas filed an update to the application and evidence to include the Estimated Billing and Meter Reading Performance Report, and the OEB issued the Notice of Application along with the Letter of Direction that same day [3][4]. A Notice of Hearing was issued August 24, 2026, and the proceeding (EB-2026-0108) is before commissioners David Sword (presiding), Julia McNally and Michael Janigan [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3707,
+        "output_tokens": 262,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the filing date as July 30, 2026, matching the reference."
+    },
+    {
+      "id": "h15",
+      "question": "Why will the OEB review Hydro Hawkesbury's 2027 rate increase in a particular context?",
+      "first_relevant_rank": 2,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 16.099375003250316,
+      "total_ms": 6396.844540984603,
+      "retrieved": [
+        [
+          "954142",
+          "EB-2026-0048",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956445",
+          "EB-2026-0048",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954139",
+          "EB-2026-0048",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954929",
+          "EB-2026-0073",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954147",
+          "EB-2026-0038",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956445",
+          "EB-2026-0048",
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "answer": "The OEB will review Hydro Hawkesbury's requested increase in the context of its reported over earnings, because Hydro Hawkesbury states that its 2025 earnings were in excess of the threshold set by the OEB [1][2]. This is noted both in the Notice of Hearing issued August 31, 2026 [1] and in Procedural Order No. 1 in the incentive rate-setting mechanism application (EB-2026-0048) for rates beginning January 1, 2027, filed August 10, 2026 under section 78 of the *Ontario Energy Board Act, 1998* [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3642,
+        "output_tokens": 238,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the review is in the context of over earnings, earnings in excess of the OEB threshold, matching the reference fact."
+    },
+    {
+      "id": "h16",
+      "question": "What account disposition did Niagara-on-the-Lake Hydro request in its 2027 IRM application?",
+      "first_relevant_rank": 3,
+      "doc_hit@1": false,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.79170800000429,
+      "total_ms": 7169.468042004155,
+      "retrieved": [
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "955707",
+          "EB-2026-0060",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "956909",
+          "EB-2026-0060",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956681",
+          "EB-2026-0069",
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "answer": "Niagara-on-the-Lake Hydro's 2027 IRM application (EB-2026-0060, filed August 7, 2026 under section 78 of the *Ontario Energy Board Act, 1998*) sought approval to dispose of the balance in a deferral and variance account described as a Group 2 account, in addition to changes to its distribution rates effective January 1, 2027 [3].\n\nThe retrieved filings do not identify the specific Group 2 account number or balance. The closest related material is OEB staff's interrogatories of September 24, 2026, which ask about other regulatory balance matters \u2014 updating the continuity schedule for the Q4 2026 prescribed interest rate of 2.87% [2], unhiding and populating the Disposition and Recovery/Refund of Regulatory Balances rows for 2021 and 2022 and changing cell BU30 to \"No\" because Niagara-on-the-Lake Hydro is not disposing of regulatory balances (2009) [2], the rationale for the Account 1595 (2023) recovery portion values [1], and whether Hydro One Networks refunded the 2024 Double-Peak Billing charges previously disposed of through Accounts 1584 ($220,998) and 1586 ($21,329) in the 2026 IRM [1]. These are staff questions, not OEB findings.",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3206,
+        "output_tokens": 487,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the application sought disposition of a Group 2 account balance, matching the reference fact."
+    },
+    {
+      "id": "h17",
+      "question": "Which rate riders did Newmarket-Tay Power Distribution ask to extend for the 2028 rate year?",
+      "first_relevant_rank": null,
+      "doc_hit@1": false,
+      "doc_hit@3": false,
+      "doc_hit@k": false,
+      "answer_hit@k": false,
+      "retrieval_ms": 16.628709010547027,
+      "total_ms": 2426.7341660161037,
+      "retrieved": [
+        [
+          "956888",
+          "EB-2026-0221",
+          [
+            66,
+            66
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            11,
+            12
+          ]
+        ],
+        [
+          "956907",
+          "EB-2026-0225",
+          [
+            17,
+            18
+          ]
+        ],
+        [
+          "955056",
+          "EB-2026-0221",
+          [
+            172,
+            173
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            13,
+            14
+          ]
+        ],
+        [
+          "954612",
+          "EB-2025-0024",
+          [
+            7,
+            8
+          ]
+        ]
+      ],
+      "answer": "The retrieved filings do not contain any information about Newmarket-Tay Power Distribution or a 2028 rate year. The sources cover rate riders for other utilities and periods \u2014 Lakeland Power's 2026 IRM rate riders (EB-2025-0024) [2][5][6], Enbridge Gas's Q4 2026 QRAM riders (EB-2026-0221) [1][4], and EPCOR Natural Gas Limited Partnership's October 2026 QRAM riders (EB-2026-0225) [3].",
+      "answer_acc": false,
+      "cited_expected": false,
+      "usage": {
+        "input_tokens": 3056,
+        "output_tokens": 176,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": false,
+      "judge_reason": "The answer states no information is available and does not mention the Lost Revenue Adjustment Mechanism rate rider."
+    },
+    {
+      "id": "h18",
+      "question": "How many written submissions did the OEB receive on the Spending Pattern Analysis report?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 16.375625011278316,
+      "total_ms": 2928.3158339967486,
+      "retrieved": [
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956850",
+          "EB-2026-0154",
+          [
+            9,
+            9
+          ]
+        ],
+        [
+          "955991",
+          "EB-2026-0245",
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "955869",
+          "EB-2019-0207",
+          [
+            3,
+            4
+          ]
+        ]
+      ],
+      "answer": "The OEB received **13 written submissions** on the Spending Pattern Analysis (SPA) report [1][2]. The SPA report was issued January 8, 2026 under the EB-2025-0108 consultation, and the OEB has stated it considered the key themes raised in those submissions [2]. Feedback from the SPA consultation will inform the Next Generation Rate Framework consultation (EB-2026-0002), which is anticipated to resume in early 2027 [2][5].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3147,
+        "output_tokens": 166,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states 13 written submissions, matching the reference."
+    },
+    {
+      "id": "h19",
+      "question": "When does the OEB expect the Next Generation Rate Framework consultation to resume?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 16.5817909874022,
+      "total_ms": 2076.9599589984864,
+      "retrieved": [
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "956228",
+          "EB-2026-0157",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954622",
+          "EB-2025-0108",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "956565",
+          "EB-2026-0065",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "954993",
+          "EB-2026-0152",
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "answer": "The OEB anticipates that the Next Generation Rate Framework consultation (EB-2026-0002) will resume in early 2027, and it will notify stakeholders when it does [1][2]. Feedback from the now-completed Spending Pattern Analysis consultation (EB-2025-0108) will be considered as the OEB develops options and proposals for that consultation [1][4].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2515,
+        "output_tokens": 124,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the consultation will resume in early 2027, matching the reference."
+    },
+    {
+      "id": "h20",
+      "question": "When did the Ontario government release its Integrated Energy Plan?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 15.895707998424768,
+      "total_ms": 5106.941292004194,
+      "retrieved": [
+        [
+          "955226",
+          null,
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            18,
+            18
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            16,
+            17
+          ]
+        ],
+        [
+          "954325",
+          "EB-2026-0056",
+          [
+            18,
+            18
+          ]
+        ],
+        [
+          "955486",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955991",
+          "EB-2026-0245",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "answer": "The Ontario government released its Integrated Energy Plan, *Energy for Generations: Ontario's Integrated Plan to Power the Strongest Economy in the G7*, in June 2025 \u2014 dated June 12, 2025 [1][2][4].\n\nAlongside the IEP, the Minister of Energy and Mines issued an implementation Directive to the OEB [1]. The OEB has described this as the Minister's June 2025 Integrated Energy Plan Directive, which called on the OEB to review the regional and bulk electricity planning processes [6]. London Hydro's application similarly refers to it as Ontario's first Integrated Energy Plan, a coordinated multi-fuel planning framework extending to 2050 [3].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 2764,
+        "output_tokens": 261,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states June 2025 (June 12, 2025), matching the reference fact."
+    },
+    {
+      "id": "h21",
+      "question": "Into which two components did the OEB split its review of DER valuation?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 17.080584017094225,
+      "total_ms": 2518.3654580032453,
+      "retrieved": [
+        [
+          "954563",
+          null,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            8,
+            9
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            10,
+            10
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            49,
+            50
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            40,
+            41
+          ]
+        ],
+        [
+          "954563",
+          null,
+          [
+            53,
+            53
+          ]
+        ]
+      ],
+      "answer": "The OEB reviewed DER valuation as two distinct components: **DER compensation** and **DER delivery rates** [1][2].\n\n- DER compensation covers the revenues DERs receive, or costs they avoid, through the services they provide [1]; the OEB describes it as the monetary compensation DERs receive for the services they provide [2].\n- DER delivery rates are the OEB-approved electricity distribution and transmission rates that DERs pay [1].\n\nTogether these two components constitute the overall incentives available to DER proponents in the province [1][2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3521,
+        "output_tokens": 198,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states DER compensation (and DER delivery rates) as the two components, matching the reference fact."
+    },
+    {
+      "id": "h22",
+      "question": "Which towns does Hydro One's D6 Relocation Project transmission line pass through?",
+      "first_relevant_rank": 1,
+      "doc_hit@1": true,
+      "doc_hit@3": true,
+      "doc_hit@k": true,
+      "answer_hit@k": true,
+      "retrieval_ms": 29.713875002926216,
+      "total_ms": 3127.812625025399,
+      "retrieved": [
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          "956386",
+          "EB-2026-0112",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "955549",
+          "EB-2026-0112",
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          "954803",
+          "EB-2019-0082",
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          "956386",
+          "EB-2026-0112",
+          [
+            2,
+            3
+          ]
+        ]
+      ],
+      "answer": "The D6 Relocation Project line runs through the County of Renfrew and passes through three municipalities: the Towns of Petawawa, Laurentian Hills and Deep River [6]. This is stated in the style of cause for Hydro One's section 92 leave to construct application in EB-2026-0112 [6]. The project is an approximately 21 km, 115 kV single-circuit transmission line between Chalk River CTS and Petawawa Junction, including roughly 18 km on federally owned lands at CFB Petawawa [2].",
+      "answer_acc": true,
+      "cited_expected": true,
+      "usage": {
+        "input_tokens": 3494,
+        "output_tokens": 221,
+        "cache_read_input_tokens": 1375,
+        "cache_creation_input_tokens": 0
+      },
+      "judge_correct": true,
+      "judge_reason": "The answer states the line passes through the Town of Petawawa, matching the reference fact, with additional detail."
+    }
+  ]
+}

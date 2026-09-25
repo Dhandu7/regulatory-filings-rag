@@ -1,0 +1,22 @@
+name: regrag
+version: "0.1.0"
+config-version: 2
+profile: regrag
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: target
+clean-targets: [target, dbt_packages]
+
+vars:
+  # Mirrors configs/chunking/*.yaml bounds; keep in sync when changing chunking.
+  max_chunk_tokens: 800
+  max_quarantine_rate: 0.25
+
+models:
+  regrag:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

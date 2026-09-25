@@ -1,0 +1,2 @@
+# Installed by Databricks Apps when the console is deployed (see app.yaml). Local setup uses `make install`.
+.

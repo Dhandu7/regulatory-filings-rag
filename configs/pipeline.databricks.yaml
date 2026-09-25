@@ -1,0 +1,63 @@
+# Databricks configuration (used by the bundle in databricks.yml).
+# Differences from pipeline.yaml: the lake lives on a Unity Catalog volume, gold reads chunks from the
+# Delta table the Spark silver job writes, and credentials come from the `regrag` secret scope.
+# Create the scope and keys with the commands in databricks/README.md.
+lake_root: /Volumes/workspace/regrag/lake
+# Local disk on the task, not the volume: the DuckDB embedding cache needs random-access writes,
+# which UC volumes don't support. Gold already skips chunk ids that are indexed, so nothing is lost.
+catalog_path: /tmp/regrag/catalog.duckdb
+
+sources:
+  oeb:
+    # Ontario Energy Board Regulatory Document Search (Content Manager WebDrawer JSON API)
+    base_url: https://www.rds.oeb.ca/CMWebDrawer
+    extensions: [pdf]
+    # Optional Content Manager title filter, e.g. 'decision' for decisions/orders only
+    title_filter: null
+    page_size: 100
+    request_delay_s: 0.5
+  edgar:
+    # SEC EDGAR fallback. EDGAR requires a descriptive User-Agent with contact info.
+    base_url: https://data.sec.gov
+    archive_url: https://www.sec.gov/Archives/edgar/data
+    ciks: ["0001326160", "0000072741"]   # Duke Energy, Eversource
+    forms: ["10-K", "10-Q", "8-K"]
+    request_delay_s: 0.2
+
+http:
+  user_agent: "${secret:regrag/user-agent:-regrag-research/0.1 (set the regrag/user-agent secret)}"
+  timeout_s: 60
+
+validation:
+  min_bytes: 1024
+  max_bytes: 52428800        # 50 MB
+  freshness_warn_days: 14
+  volume_drop_warn_ratio: 0.3  # warn if a run lands < 30% of trailing average
+
+silver:
+  max_pages: 400
+  extract_tables: true
+  min_text_chars: 200         # below this we treat the file as scanned/empty -> quarantine
+  chunking_config: configs/chunking/v1.yaml
+
+gold:
+  embed_model: BAAI/bge-small-en-v1.5
+  embed_dim: 384
+  embed_batch_size: 64
+  store: pgvector
+  # Hosted Postgres with pgvector (e.g. Supabase session pooler URL, sslmode=require)
+  database_url: "${secret:regrag/database-url}"
+  chunks_table: workspace.regrag.silver_chunks   # Delta table written by databricks/src/silver_spark.py
+
+serve:
+  model: ${REGRAG_LLM_MODEL:-claude-opus-5}
+  effort: medium
+  top_k: 6
+  # dense | hybrid | rerank (see src/regrag/serve/chain.py). Choice is set from the eval results.
+  retrieval: ${REGRAG_RETRIEVAL:-rerank}
+  # Neighboring chunks attached to each hit (0 = off)
+  expand_window: ${REGRAG_EXPAND_WINDOW:-1}
+  rerank:
+    model: ${REGRAG_RERANK_MODEL:-Xenova/ms-marco-MiniLM-L-6-v2}
+    candidates: ${REGRAG_RERANK_CANDIDATES:-20}
+  answer_cache_ttl_s: 86400

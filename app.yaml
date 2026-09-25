@@ -1,0 +1,14 @@
+# Databricks App: serves the demo console + /ask API (regrag.serve.api) from this repository.
+# Secrets come from the app resources declared in databricks.yml (regrag scope).
+command: ["python", "-m", "regrag.cli", "serve"]
+env:
+  - name: PYTHONPATH
+    value: src
+  - name: REGRAG_HOST             # Apps route traffic to 0.0.0.0:$DATABRICKS_APP_PORT
+    value: "0.0.0.0"
+  - name: REGRAG_CONSOLE_JOBS     # pipeline stages run as the Databricks job, not inside the app
+    value: "off"
+  - name: DATABASE_URL
+    valueFrom: database-url
+  - name: ANTHROPIC_API_KEY
+    valueFrom: anthropic-api-key

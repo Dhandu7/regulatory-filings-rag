@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: stg_bronze_manifest
+    description: Bronze landing manifest.
+    tests:
+      - unique_combination: {arguments: {columns: [source, source_id]}}
+    columns:
+      - name: record_key
+        tests: [not_null, unique]
+      - name: source
+        tests: [not_null, {accepted_values: {arguments: {values: [oeb, edgar]}}}]
+      - name: sha256
+        tests: [not_null, {matches_regex: {arguments: {pattern: '^[0-9a-f]{64}$'}}}]
+      - name: object_uri
+        tests: [not_null]
+      - name: fetched_at
+        tests: [not_null]
+      - name: bytes
+        tests: [not_null]
+      - name: docket
+        tests:
+          - matches_regex: {arguments: {pattern: '^(EB|RP)-[0-9]{4}-[0-9]{4}$|^[0-9]{10}-[0-9]{2}-[0-9]{6}$|^[0-9]{5}$'}}
+  - name: stg_silver_documents
+    columns:
+      - name: record_key
+        tests:
+          - unique
+          - not_null
+          - relationships: {arguments: {to: ref('stg_bronze_manifest'), field: record_key}}
+      - name: doc_id
+        tests: [not_null]
+      - name: status
+        tests: [not_null, {accepted_values: {arguments: {values: [ok, duplicate]}}}]
+      - name: n_pages
+        tests:
+          - not_null:
+              config: {where: "status = 'ok'"}
+
+  - name: stg_silver_chunks
+    tests:
+      - unique_combination: {arguments: {columns: [chunk_config_version, chunk_id]}}
+    columns:
+      - name: chunk_id
+        tests: [not_null]
+      - name: doc_id
+        tests:
+          - not_null
+          - relationships: {arguments: {to: ref('stg_silver_documents'), field: doc_id}}
+      - name: chunk_config_version
+        tests: [not_null, {matches_regex: {arguments: {pattern: '^[A-Za-z0-9_]+-[0-9a-f]{12}$'}}}]
+      - name: chunk_type
+        tests: [not_null, {accepted_values: {arguments: {values: [text, table]}}}]
+      - name: text
+        tests: [not_null]
+      - name: page_start
+        tests: [not_null]
+
+  - name: stg_silver_quarantine
+    columns:
+      - name: record_key
+        tests: [not_null, unique]
+      - name: stage
+        tests: [{accepted_values: {arguments: {values: [bronze_validation, parse]}}}]
+      - name: reason
+        tests: [not_null]

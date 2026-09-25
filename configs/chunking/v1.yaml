@@ -1,0 +1,13 @@
+# Chunking config. The pipeline hashes this file's canonical form into a
+# `chunk_config_version` (name + hash) stamped on every chunk and gold row,
+# so any change produces a new, side-by-side index version instead of
+# silently mutating the old one.
+name: v1
+tokenizer: cl100k_base
+max_tokens: 380
+overlap_tokens: 60
+min_tokens: 40
+respect_sections: true        # never merge text across detected section headings
+tables_as_separate_chunks: true
+max_table_tokens: 800
+prepend_context: true         # prefix each chunk with "title | docket | section" for embedding

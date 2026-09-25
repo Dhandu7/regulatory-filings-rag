@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_documents
+    columns:
+      - name: doc_id
+        tests: [not_null]
+  - name: fct_chunks
+    columns:
+      - name: chunk_id
+        tests: [not_null]
+  - name: rpt_pipeline_health
+    columns:
+      - name: run_id
+        tests: [unique, not_null]
+  - name: rpt_docket_coverage
+    columns:
+      - name: docket
+        tests: [unique]

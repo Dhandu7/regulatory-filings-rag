@@ -1,0 +1,16 @@
+.venv/
+.vendor/
+.pgdata/
+data/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+.env
+.DS_Store
+dist/
+build/
+.claude/
