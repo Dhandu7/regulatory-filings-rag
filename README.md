@@ -16,7 +16,24 @@ section and page behind every claim.
                                               └─▶ Claude (cached system prompt) → answer with [n] citations
 ```
 
-## Quick start
+## Quick start with Docker
+
+Postgres 17 with pgvector and the API/console run as two containers. The image bakes in the embedding model,
+reranker and tokenizer, so nothing is downloaded from Hugging Face at startup.
+
+```bash
+cp .env.example .env        # optional: ANTHROPIC_API_KEY for Claude answers, REGRAG_USER_AGENT for the OEB API
+docker compose up -d --build
+docker compose run --rm api regrag run --since 2026-09-01 --max-docs 50   # ingest -> validate -> silver -> dbt -> gold
+open http://localhost:8000  # demo console
+```
+
+The data lake, caches and job logs live in the `lake` volume, and the vector index in `pgdata`. Any CLI command
+runs the same way: `docker compose run --rm api regrag eval`. `make docker-up`, `make docker-pipeline` and
+`make docker-down` are shortcuts. CI builds the image and smoke-tests the stack on every push. Embedding runs on
+CPU, so a large first ingest takes a while (about 20 minutes for 18k chunks on a laptop).
+
+## Quick start (local, without Docker)
 
 ```bash
 make install            # venv + package (Python 3.11+; developed on 3.14)

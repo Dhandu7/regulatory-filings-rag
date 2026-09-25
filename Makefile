@@ -3,7 +3,7 @@
 PY := PYTHONPATH=src .venv/bin/python
 REGRAG := $(PY) -m regrag.cli
 
-.PHONY: install pg-up pg-down test test-all ingest silver dbt gold pipeline serve eval eval-holdout watch flow
+.PHONY: docker-up docker-down docker-pipeline install pg-up pg-down test test-all ingest silver dbt gold pipeline serve eval eval-holdout watch flow
 
 install:
 	python3 -m venv .venv && .venv/bin/pip install -e ".[dev,ops,dbt]"
@@ -24,3 +24,8 @@ eval:      ; $(REGRAG) eval
 eval-holdout:; $(REGRAG) eval --questions eval/questions_holdout.jsonl
 watch:     ; $(REGRAG) watch --interval 900
 flow:      ; $(PY) -m regrag.ops.flows serve
+
+# Docker: Postgres+pgvector and the API/console (http://localhost:8000); see docker-compose.yml
+docker-up:       ; docker compose up -d --build
+docker-down:     ; docker compose down
+docker-pipeline: ; docker compose run --rm api regrag run --max-docs 50

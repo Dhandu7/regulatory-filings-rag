@@ -49,6 +49,28 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: pytest tests/test_pgvector.py
 
+  docker:
+    # Builds the image and smoke-tests the compose stack: API health, console page, CLI inside the container.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start the stack
+        run: docker compose up -d --build --wait --wait-timeout 300
+      - name: API and console respond
+        run: |
+          curl -fsS http://localhost:8000/health
+          curl -fsS http://localhost:8000/ | grep -q "Regulatory Filings RAG"
+      - name: CLI works inside the container
+        run: |
+          docker compose exec -T api regrag versions
+          docker compose exec -T api regrag rechunk
+      - name: Logs on failure
+        if: failure()
+        run: docker compose logs --no-color | tail -200
+      - name: Tear down
+        if: always()
+        run: docker compose down -v
+
   live-source-smoke:
     # Nightly check that the regulator APIs haven't changed shape (the most likely silent failure).
     if: github.event_name == 'schedule'

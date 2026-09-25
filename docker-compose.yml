@@ -1,0 +1,43 @@
+# Local stack: Postgres 17 + pgvector, and the regrag API/console.
+#
+#   cp .env.example .env            # optional: ANTHROPIC_API_KEY, REGRAG_USER_AGENT
+#   docker compose up -d --build
+#   docker compose run --rm api regrag run --since 2026-09-01 --max-docs 50   # ingest -> ... -> gold
+#   open http://localhost:8000
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: utility_rag
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d utility_rag"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    build: .
+    image: regrag:latest
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # `environment` wins over .env, so a local DATABASE_URL there can't point the container elsewhere.
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/utility_rag
+      REGRAG_LAKE_ROOT: /app/data/lake
+      REGRAG_CATALOG: /app/data/catalog.duckdb
+    ports:
+      - "8000:8000"
+    volumes:
+      - lake:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  lake:
